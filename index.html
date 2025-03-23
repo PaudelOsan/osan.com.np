@@ -1,5 +1,264 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Osan Paudel - Portfolio showcasing projects, skills, and contact information.">
+    <title>Osan Paudel - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
 <body>
-hi
+
+    <!-- Full-Page Welcome Screen -->
+    <div id="welcomeScreen" class="welcome-screen">
+        <div class="welcome-content">
+            <h1>Hi, feel free </h1>
+            <p>to explore my work and connect with me!</p>
+            <p>
+                <a href="https://github.com/PaudelOsan" target="_blank">GitHub</a> | 
+                <a href="https://linkedin.com/in/osan-paudel-4414b3330" target="_blank">LinkedIn</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Home Page Content -->
+    <div id="homePage" class="hidden">
+        <header> 
+            <div class="header-container">
+                <div class="steering-wheel-container">
+                    <img src="images/piratewheel.png" alt="Steering Wheel" id="steering-wheel" />
+                </div>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <button id="modeToggle" class="mode-toggle">🌙</button>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+<!-- Home Section -->
+<section id="home" class="home-section">
+    <div class="left-half">
+        <h2 class="software-dev">
+            <span class="software-text">Software</span><br>
+            <span class="developer-text">Developer</span>
+        </h2>
+        <p>Software Support Student</p>
+        <p>Passionate about solving problems and building innovative solutions</p>
+
+        <!-- Skills Section -->
+        <div class="homepageskill-container">
+            <div class="homepageskill-button">HTML</div>
+            <div class="homepageskill-button">JavaScript</div>
+            <div class="homepageskill-button">Python</div>
+        </div>
+
+        <!-- Social Links Section -->
+        <div class="social-links-container">
+            <a href="https://www.linkedin.com/in/osan-paudel-4414b3330" target="_blank" class="social-link">
+                <img src="images/linkedinlogo.png" alt="LinkedIn Logo" class="social-logo">
+            </a>
+            <a href="https://github.com/PaudelOsan" target="_blank" class="social-link">
+                <img src="images/githublogo.png" alt="GitHub Logo" class="social-logo">
+            </a>
+            <a href="https://www.instagram.com/defnotosan" target="_blank" class="social-link">
+                <img src="images/instalogo.png" alt="Instagram Logo" class="social-logo">
+            </a>
+        </div>
+    </div>
+    <div class="right-half">
+        <img src="images/home.gif" alt="Animated Image" id="animated-image">
+    </div>
+</section>
+
+        <!-- About Section -->
+        <section id="about" class="hidden-section">
+            <div class="about-header">
+                <h2>About Me</h2>
+                <p>Transforming ideas into digital experiences</p>
+            </div>
+
+            <div class="about-content">
+                <div class="text-section">
+                    <h3>Hello, I'm</h3>
+                    <h4>Osan Paudel</h4>
+                    <p>I am a software developer with a strong passion for web development. I specialize in using technologies like HTML, CSS, PHP, Java, JavaScript, and Python to create clean, efficient, and user-friendly digital solutions.</p>
+                    <a href="https://docs.google.com/document/d/1l_qhkRV_-1qQmcOriy7P1HoOgrW19mLr/export?format=docx" class="cv-button" download>Download CV</a>
+                </div>
+                <div class="image-section">
+                    <img src="images/P4.jpeg" alt="Osan Paudel" id="profile-photo">
+                </div>
+            </div>
+
+            <!-- Stats Section (Inside About) -->
+            <div class="stats-section">
+                <div class="stats-box" onclick="showProjects()"> <!-- Link to Projects -->
+                    <div class="stats-content">
+                        <div class="icon-circle">
+                            <img src="images/project.png" alt="Project Icon">
+                        </div>
+                        <div class="stats-info">
+                            <h3 class="stats-number">1</h3>
+                            <p class="stats-title">Total Projects</p>
+                            <p class="stats-description">Successfully completed projects</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-box" onclick="showCertifications()"> <!-- Link to Certifications -->
+                    <div class="stats-content">
+                        <div class="icon-circle">
+                            <img src="images/certificate.png" alt="Certificate Icon">
+                        </div>
+                        <div class="stats-info">
+                            <h3 class="stats-number">0</h3>
+                            <p class="stats-title">Certificates</p>
+                            <p class="stats-description">Professional skills validated</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-box" onclick="showExperience()"> <!-- Link to Experience -->
+                    <div class="stats-content">
+                        <div class="icon-circle">
+                            <img src="images/workexperience.png" alt="Experience Icon">
+                        </div>
+                        <div class="stats-info">
+                            <h3 class="stats-number">0</h3>
+                            <p class="stats-title">Years of Experience</p>
+                            <p class="stats-description">Time spent mastering skills</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="hidden-section">
+            <h2>Portfolio Showcase</h2>
+            <p>Explore my journey through projects, certifications, experience, and technical expertise. Each section represents a milestone in my continuous learning path.</p>
+
+            <div class="portfolio-rectangles">
+                <div class="portfolio-item" id="projects" onclick="showProjects()">Projects</div>
+                <div class="portfolio-item" id="certifications" onclick="showCertifications()">Certifications</div>
+                <div class="portfolio-item" id="tech-stack" onclick="showTechStack()">Tech Stack</div>
+                <div class="portfolio-item" id="experience" onclick="showExperience()">Experience</div>
+            </div>
+
+            <!-- Popup for Projects -->
+            <div id="projects-popup" class="projects-popup">
+                <div class="popup-content">
+                    <span class="close-btn" onclick="closePopup()">×</span>
+                    <div class="projects-card-container">
+                        <div class="project-card">
+                            <img src="images/project1.png" alt="Project 1" class="project-img">
+                            <div class="project-info">
+                                <h4>Space Blaster</h4>
+                                <p>A 2D spaceship game built with Unity and C#.</p>
+                                <a href="https://osanpaudel.itch.io/cosmic-escape" target="_blank" class="project-link">🎮 Play Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Popup for Certifications -->
+            <div id="certifications-popup" class="projects-popup">
+                <div class="popup-content">
+                    <span class="close-btn" onclick="closePopup()">×</span>
+                    <div class="projects-card-container">
+                        <div class="project-card">
+                            <img src="images/coming soon.jpg" alt="Certificate" class="project-img">
+                            <div class="project-info">
+                                <h4>Certification Title</h4>
+                                <p>Description of your certification.</p>
+                                <a href="https://example.com/certificate" target="_blank" class="cert-link">View Certificate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Popup for Experience -->
+            <div id="experience-popup" class="projects-popup">
+                <div class="popup-content">
+                    <span class="close-btn" onclick="closePopup()">×</span>
+                    <div class="projects-card-container">
+                        <div class="project-card">
+                            <img src="images/coming soon.jpg" alt="Experience" class="project-img">
+                            <div class="project-info">
+                                <h4>Job/Internship</h4>
+                                <p>Description of your work experience.</p>
+                                <a href="https://example.com/experience" target="_blank" class="experience-link">View Experience</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Section (Tech Stack) -->
+            <section id="skills" class="visible">
+                <div class="skills-container">
+                    <div class="skill-row">
+                        <div class="skill-item"><img src="images/java.webp" alt="Java Logo"><p>Java</p></div>
+                        <div class="skill-item"><img src="images/html.webp" alt="HTML Logo"><p>HTML</p></div>
+                        <div class="skill-item"><img src="images/css.png" alt="CSS Logo"><p>CSS</p></div>
+                        <div class="skill-item"><img src="images/python.webp" alt="Python Logo"><p>Python</p></div>
+                        <div class="skill-item"><img src="images/github.svg" alt="GitHub Logo"><p>GitHub</p></div>
+                    </div>
+                    <div class="skill-row">
+                        <div class="skill-item"><img src="images/js.webp" alt="JavaScript Logo"><p>JavaScript</p></div>
+                        <div class="skill-item"><img src="images/sql.svg" alt="MySQL Logo"><p>MySQL</p></div>
+                        <div class="skill-item"><img src="images/cc.png" alt="C# Logo"><p>C#</p></div>
+                        <div class="skill-item"><img src="images/office.png" alt="MS Office Logo"><p>MS Office</p></div>
+                        <div class="skill-item"><img src="images/c.png" alt="C Logo"><p>C</p></div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="hidden-section">
+            <div class="contact-container">
+                <!-- Left Side (Get in Touch) -->
+                <div class="contact-left">
+                    <h2>Get in Touch</h2>
+                    <p>Feel free to reach out via email or connect with me on my social platforms.</p>
+                    <p><i class="fas fa-envelope"></i> defnotosan@Outlook.com</p>
+                    <p><i class="fab fa-github"></i> <a href="https://github.com/PaudelOsan" target="_blank">GitHub</a></p>
+                    <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/osan-paudel-4414b3330" target="_blank">LinkedIn</a></p>
+                </div>
+
+                <!-- Right Side (Comment Form) -->
+                <div class="contact-right">
+                    <h2>Leave a Comment</h2>
+                    <form id="contact-form" action="https://formsubmit.co/osanpdl123@gmail.com" method="POST">
+                        <div class="input-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="message">Your Comment</label>
+                            <textarea id="message" name="message" placeholder="Write your comment here..." required></textarea>
+                        </div>
+                        <input type="hidden" name="_captcha" value="false">
+                        <button type="submit" class="submit-button">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Osan Paudel | All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

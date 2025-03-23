@@ -1,0 +1,1271 @@
+General Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    scroll-snap-type: y mandatory; /* Enable vertical scroll snapping */
+    overflow-y: scroll; /* Enable scrolling */
+    height: 100vh; /* Ensure full height for scroll */
+    scroll-behavior: smooth; /* Smooth scroll for transitions */
+    padding:0 100px;
+}
+section {
+    scroll-snap-align: start; /* Ensures sections snap to the top */
+    height: 100vh; /* Ensure each section takes full screen height */
+    transition: transform 0.5s ease-out;
+}
+
+html {
+    scroll-behavior: smooth;
+
+}
+
+/* Full-Page Welcome Screen */
+.welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #9c9c9c, #6b6b6b, #fdfffe);
+    background-size: 200% 200%;
+    animation: gradientShift 5s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+    overflow: hidden;
+}
+
+.welcome-content {
+    text-align: center;
+    color: white;
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeIn 2s ease-out forwards;
+}
+
+.welcome-content h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    animation: bounce 1s infinite alternate;
+}
+
+.welcome-content p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeInText 2s ease-out 1s forwards;
+}
+
+.welcome-content a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    opacity: 0;
+    animation: fadeInLinks 2s ease-out 2s forwards;
+}
+
+.welcome-content a:hover {
+    text-decoration: underline;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Animations */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes fadeInText {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLinks {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    0%,
+    100% {
+        border-color: transparent;
+    }
+    50% {
+        border-color: black;
+    }
+}
+
+/* Navbar */
+header {
+    position: fixed;
+    top: 0;
+    right: 0; /* Align to the right corner */
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    z-index: 10;
+    padding: 15px 10px;
+}
+
+/* Navigation Container */
+nav {
+    display: flex;
+    justify-content: flex-end; /* Align nav items to the right */
+    width: 100%;
+}
+/* Steering Wheel Container (Positioned on the left side of the navbar) */
+.steering-wheel-container {
+    position: fixed; /* Keep it fixed in the viewport */
+    left: 1px;  /* Position it 10px from the left edge of the navbar */
+    top: 5%; /* Vertically center the wheel */
+    transform: translateY(-50%); /* Center it vertically in the navbar */
+    z-index: 9999; /* Ensure it's above other elements in the navbar */
+}
+
+/* Steering Wheel Styling */
+#steering-wheel {
+    width: 90px;  /* Adjust the size of the wheel */
+    height: 90px;
+    object-fit: contain;
+    transition: transform 0.1s linear; /* Smooth rotation transition */
+    will-change: transform; /* Optimize for performance */
+}
+
+/* Navigation Links */
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar List Items */
+nav ul li {
+    width: auto;
+    text-align: center;
+    margin-left: 15px; /* Add some space between nav items */
+}
+
+/* Navbar Links */
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: block;
+    padding: 10px 20px; /* Add padding to make links bigger */
+    border-radius: 25px; /* Round the corners */
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+/* Hover Effects for Navbar Links */
+nav ul li a:hover {
+    background-color: #646461;
+    transform: scale(1.1);
+}
+
+/* Mode Toggle Button */
+.mode-toggle {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding-right: 10px;
+    padding-top: 4px;
+}
+
+.mode-toggle:hover {
+    color: #f1c40f;
+}
+
+/* Light Mode */
+body.light-mode {
+    background-image: url('images/bglight.png'); /* Single PNG background image for light mode */
+    background-size: cover;  /* Make the background cover the entire page */
+    background-repeat: repeat; /* Ensure the image does not repeat */
+    background-position: center; /* Center the image */
+    color: #333; /* Text color for light mode */
+}
+
+body.light-mode #contact .input-group input,
+body.light-mode #contact .input-group textarea {
+    background-color: white; /* Set background color to white in light mode */
+    color: #333; /* Dark text color for readability */
+    border: 1px solid #ccc; /* Light border color */
+}
+
+/* Focus effect on input fields within the contact section in light mode */
+body.light-mode #contact .input-group input:focus,
+body.light-mode #contact .input-group textarea:focus {
+    border-color: #f1c40f; /* Gold border on focus */
+    box-shadow: 0 0 5px rgba(241, 196, 15, 0.5); /* Light gold shadow on focus */
+}
+
+.light-mode header {
+    background-color: #3e3e3e; /* Light mode header background */
+}
+
+.light-mode .mode-toggle {
+    color: #333; /* Light mode button text color */
+}
+
+/* About Me Section (Light Mode) */
+body.light-mode #about h3,
+body.light-mode #about h4,
+body.light-mode #about p {
+    color: #333; /* Text color for about section in light mode */
+}
+
+/* Stats Boxes in Light Mode */
+body.light-mode .stats-box {
+    background-color: #fff; /* Set background to white for stats boxes in light mode */
+}
+
+/* Portfolio Showcase Page (Light Mode) */
+body.light-mode #portfolio h2,
+body.light-mode #portfolio p {
+    color: #333; /* Set text to dark color in light mode */
+}
+
+body.light-mode #skills p {
+    color: white; /* Set skills section text color to white in light mode */
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-image: url('images/bgdark.png'); /* Single PNG background image for dark mode */
+    background-size: cover; /* Make the background cover the entire page */
+    background-repeat: repeat; /* Ensure the image does not repeat */
+    background-position: center; /* Center the image */
+    color: white; /* Text color for dark mode */
+}
+
+.dark-mode header {
+    background-color: #333; /* Dark mode header background */
+}
+
+.dark-mode .mode-toggle {
+    color: white; /* Dark mode button text color */
+}
+
+/* About Me Section (Dark Mode) */
+body.dark-mode #about h3,body.dark-mode #about h2,
+body.dark-mode #about h4,
+body.dark-mode #about p {
+    color: white; /* Set text to white for about section in dark mode */
+}
+
+/* Stats Boxes in Dark Mode */
+body.dark-mode .stats-box {
+    background-color: #444; /* Set background to grey for stats boxes in dark mode */
+}
+
+/* Portfolio Showcase Page (Dark Mode) */
+body.dark-mode #portfolio h2,
+body.dark-mode #portfolio p {
+    color: white; /* Set text to white in portfolio section */
+}
+
+body.dark-mode #skills p {
+    color: white; /* Set skills section text color to white in both light and dark modes */
+}
+
+/* Popups (Projects, Certifications, Experience) */
+body.dark-mode .projects-popup {
+    background-color: #333; /* Dark background for popups */
+}
+
+body.dark-mode .popup-content {
+    background-color: #444; /* Darker content background inside popups */
+    color: white; /* Set text to white in popups */
+}
+
+/* Contact Me Page (Dark Mode) */
+body.dark-mode #contact p,
+body.dark-mode #contact h2,
+body.dark-mode .contact-left p,
+body.dark-mode .contact-left a {
+    color: white; /* Set text to white for contact page */
+}
+
+/* Contact Form Box Background in Dark Mode */
+body.dark-mode #contact .contact-container {
+    background-color: #333; /* Set background to dark grey for contact form box */
+    color: white; /* Set text inside the contact box to white */
+}
+body.dark-mode #contact .contact-right {
+    background-color: #444; /* Dark background for textarea */
+    color: white; /* White text inside textarea */
+    border: 1px solid #666; /* Lighter border for the textarea */
+}
+
+/* Message Box in Dark Mode */
+body.dark-mode #contact .input-group textarea ,#name{
+    background-color: #3c3b3b; /* Dark background for textarea */
+    color: white; /* White text inside textarea */
+    border: 1px solid #666; /* Lighter border for the textarea */
+}
+
+/* Force White Background in Dark Mode */
+body.dark-mode .social-link {
+    background-color: white !important; /* Keeps the inside always white */
+    border-color: #444; /* Keeps border dark */
+}
+
+body.dark-mode .social-logo {
+    filter: invert(0); /* Keeps icons their original color */
+}
+
+/* Responsiveness for Mobile */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll; /* Ensure background is scrollable on mobile */
+        background-size: cover; /* Ensure the background image covers the screen */
+    }
+}
+
+/* Force White Background in Dark Mode */
+body.dark-mode .social-link {
+    background-color: white !important; /* Keeps the inside always white */
+    border-color: #444; /* Keeps border dark */
+}
+
+body.dark-mode .social-logo {
+    filter: invert(0); /* Keeps icons their original color */
+}
+
+/* Responsiveness for Mobile */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll; /* Ensure background is scrollable on mobile */
+        background-size: cover; /* Ensure the background image covers the screen */
+    }
+}
+
+/* Apply Yellow Hover Border in Dark Mode Too */
+body.dark-mode .social-link:hover {
+    border-color: #f1c40f !important; /* Always turn yellow on hover */
+}
+
+
+/* Home Section Full-Screen */
+.home-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 50px;
+}
+
+/* Left Half (Text) */
+.left-half {
+    width: 50%;
+    text-align: left;
+    position: relative;
+    top: -30px;
+}
+
+.software-dev {
+    font-size: 4em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.software-dev .color-text {
+    color: #fff599;
+}
+
+.left-half h2 {
+    font-size: 4em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: slideInLeft 6s ease-out forwards;
+}
+
+.left-half p:nth-child(2) {
+    font-size: 1.3em;
+    text-decoration: underline;
+    margin-bottom: 20px;
+    animation: fadeIn 6s ease-out 4s forwards;
+}
+
+.left-half p:nth-child(3) {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    animation: typing 6s steps(40) 2s forwards, blink 0.75s step-end infinite;
+}
+
+.left-half p:nth-child(3) {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid black;
+    display: inline-block;
+}
+
+/* Right Half (Image) */
+.right-half {
+    width: 50%;
+    text-align: right;
+}
+
+/* Right-side animation for the home image */
+#animated-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    opacity: 0;
+    transform: translateX(100%); /* Start off-screen to the right */
+    animation: slideInRight 7s ease-out forwards 0.5s; /* Delay to sync with text */
+}
+
+/* Slide-in animation */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#animated-image:hover {
+    transform: scale(1.05);
+}
+
+/* Visibility toggle for hidden sections */
+.hidden-section {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-out;
+}
+
+.hidden-section.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Home Page Skill Buttons Container */
+.homepageskill-container {
+    margin-top: 10px; /* Adds space from the previous section */
+    display: flex;
+    justify-content: flex-start; /* Align buttons to the left */
+    align-items: center;
+    width: 100%;
+}
+
+/* Home Page Skill Button Styles */
+.homepageskill-button {
+    padding: 15px 20px; /* Reduced padding to make the buttons smaller */
+    background-color: #444343ad;
+    color: white;
+    font-size: 1em; /* Reduced font size for smaller text */
+    font-weight: bold;
+    text-align: center;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    max-width: 120px; /* Set a maximum width for buttons */
+    margin: 0 5px; /* Reduced margin to bring the buttons closer */
+    flex: 0 1 auto; /* Make the buttons flexible but prevent shrinking */
+}
+
+/* Hover Effects */
+.homepageskill-button:hover {
+    background-color: #646461;
+    transform: scale(1.1);
+}
+
+/* Linked Buttons for Projects and Contact */
+.project-contact-button {
+    display: inline-block;
+    padding: 12px 25px; /* Padding for a rectangular shape */
+    background-color: black; /* Black background */
+    color: white; /* White text */
+    font-size: 1.1em; /* Font size */
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none; /* Remove underline from links */
+    border-radius: 5px; /* Slightly rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    margin: 10px 5px; /* Space between buttons */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effects for Linked Buttons */
+.project-contact-button:hover {
+    background-color: #444343; /* Darker background on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+/* Social Links Container */
+.social-links-container {
+    display: flex;
+    justify-content: flex-start; /* Align to the left */
+    margin-top: 10px; /* Reduced space from the buttons above */
+    gap: 15px; /* Space between social icons */
+}
+
+/* Social Link Styles */
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: white; /* White background inside */
+    border: 3px solid #444; /* Dark border */
+    border-radius: 10px; /* Rounded corners for rectangle */
+    padding: 5px 5px; /* Rectangle shape with some padding */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Social Logo Styles */
+.social-logo {
+    width: 30px; /* Adjusted logo size */
+    height: 30px;
+    filter: invert(0); /* Ensures logos keep their original color */
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effects for Social Icons */
+.social-link:hover {
+    transform: translateY(-3px); /* Lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow */
+    border-color: #f1c40f; /* Gold border on hover */
+}
+
+/* Hover Effects for Logos */
+.social-logo:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Additional Animation on Initial Load */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Bounce Animation when Scrolled into View */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-7px);
+    }
+    60% {
+        transform: translateY(-3px);
+    }
+}
+
+/* Add Bounce Effect when Scrolled into View */
+.social-link.visible {
+    animation: bounce 0.8s ease-in-out;
+}
+
+
+/* About Section */
+#about {
+    text-align: center;
+    padding: 50px;
+}
+
+#profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#profile-photo:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+#about h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Portfolio Section */
+#portfolio {
+    text-align: center;
+    padding: 50px;
+}
+
+.project-item {
+    margin-bottom: 20px;
+}
+
+.project-item iframe {
+    width: 100%;
+    max-width: 560px;
+    margin-top: 20px;
+}
+
+/*  */
+
+/* Contact Section */
+#contact {
+    text-align: center;
+    padding: 50px;
+}
+
+#contact p {
+    font-size: 1.2em;
+}
+
+/* Footer */
+footer {
+    background-color: #1d1c1c;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+* About Section */
+#about {
+    text-align: center;
+    padding: 50px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+/* About Section Text Animations */
+.text-section h3,
+.text-section h4,
+.text-section p {
+    color: black;
+    opacity: 0; /* Start with text hidden */
+    transform: translateY(20px); /* Start with a slight downward movement */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transition for opacity and transform */
+}
+
+/* When text becomes visible */
+.text-section h3.visible,
+.text-section h4.visible,
+.text-section p.visible {
+    opacity: 1;
+    transform: translateY(0); /* Reset position */
+}
+
+/* Fade-in Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#about.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#about h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out 0.5s, transform 1s ease-out 0.5s;
+}
+
+#about p.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Profile photo styling */
+#profile-photo {
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.6);
+}
+
+#profile-photo:hover {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* About Section Text Animations */
+.text-section h3,
+.text-section h4,
+.text-section p {
+    color: black;
+    animation: fadeInLeft 1s ease-out;
+}
+
+.text-section h3 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+}
+
+.text-section h4 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.text-section p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Fade-in Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* CV Button Styling */
+.cv-button {
+    display: inline-block;
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid #2c3e50;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    animation: fadeInUp 2s ease-out;
+}
+
+.cv-button:hover {
+    background-color: #34495e;
+    transform: translateY(-3px);
+    border-color: #34495e;
+}
+
+/* Profile Section Layout */
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-section {
+    flex: 1;
+    margin-right: 30px;
+    text-align: left;
+}
+
+.image-section {
+    flex: 1;
+    text-align: right;
+}
+
+/* About Section Header */
+.about-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-header h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: black;
+    animation: fadeInUp 1s ease-out;
+}
+
+.about-header p {
+    font-size: 1.2em;
+    color: black;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+/* Stats Section */
+.stats-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+    gap: 20px;
+}
+
+.stats-box {
+    background-color: #f8f8f8;
+    padding: 20px;
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stats-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.stats-content {
+    display: flex;
+    align-items: center; /* Aligns logo and number vertically in the center */
+    justify-content: flex-start; /* Aligns items to the left */
+}
+
+
+
+.stats-number {
+    font-size: 2em;
+    font-weight: bold;
+    text-align:right;
+    color: #333;
+}
+
+.stats-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: left;
+    color: #666;
+}
+
+.stats-description {
+    font-size: 0.9em;
+    text-align: left;
+    color: #888;
+}
+
+@media (max-width: 768px) {
+    .stats-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .stats-box {
+        width: 80%;
+    }
+}
+/* Small Round Symbol with Image */
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    background-color: transparent; /* Keep the background transparent */
+    border-radius: 50%; /* Make it circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensure image stays within the circle */
+    margin-top: -100px;
+    border: 2px solid #696969; /* Add circular border */
+    padding: 5px; /* Optional: Add some padding inside the circle */
+}
+
+
+.icon-circle img {
+    width: 100%;
+    height: 100%;
+    margin-top: 0px;
+    object-fit: contain; /* Ensures the image fits inside without distortion */
+}
+
+/* portfolio css *--------------------------------------/
+/* Portfolio Section */
+#portfolio {
+    text-align: center;
+    padding: 150px; /* Adjust padding for the portfolio section */
+}
+
+/* Title and Description */
+#portfolio h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#portfolio p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+/* Four Rectangles for Projects, Certifications, Tech Stack, Experience */
+.portfolio-rectangles {
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+    margin-bottom: 40px;
+}
+
+.portfolio-item {
+    padding: 20px;
+    background-color: #444343;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 200px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    background-color: #646461;
+    transform: scale(1.05);
+}
+/* Projects Popup - Positioned Inside Portfolio Below the Portfolio Boxes */
+.projects-popup {
+    display: none; /* Initially hidden */
+    position: fixed; /* Fixed position to avoid affecting layout */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the popup */
+    background-color: rgba(169, 169, 169, 0.182); /* Semi-transparent background */
+    z-index: 9999;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 80%; /* Adjust the width of the popup */
+    max-width: 900px; /* Limit max width */
+}
+
+/* Popup Content */
+.popup-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    overflow-y: auto;
+    position: relative;
+}
+
+/* Close Button */
+.popup-content .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2em;
+    cursor: pointer;
+    color: #000;
+}
+
+
+/* Projects Card Container - CSS Grid for 2 Columns */
+.projects-card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 10px; /* Space between cards */
+    max-height: 400px; /* Limit the height of the container */
+    overflow-y: auto; /* Enable scrolling if content exceeds max-height */
+    margin-top: 10px;
+    padding:30px;
+}
+
+/* Individual Project Card */
+.project-card {
+    background-color: #444343;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Project Image */
+.project-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ensures the image fills the space without distortion */
+}
+
+/* Project Info */
+.project-info {
+    padding: 15px;
+    text-align: left;
+}
+
+.project-info h4 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+/* Project Link Button */
+.project-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f1c40f;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #e67e22;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    .projects-card-container {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #1d1c1c;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+/* tech stack
+ */
+ .skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.skill-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.skill-item {
+    width: 120px;
+    height: 150px;
+    background-color: #444343ad;
+    border: 1px solid #444242;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.skill-item:hover {
+    background-color: #646461;
+    transform: scale(1.1);
+}
+
+.skill-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.skill-item p {
+    font-weight: bold;
+    color: white;
+    font-size: 1.1em;
+}
+
+/* Initially hide the Skills section */
+#skills {
+    display: block;
+    text-align: center;
+    padding: 0px;
+}
+
+/* When visible, show it */
+#skills.visible {
+    display: block;
+}
+/* Contact Section Layout */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Left Side: Get in Touch */
+.contact-left {
+    width: 30%;
+    text-align: left;
+}
+
+.contact-left h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.contact-left p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.contact-left a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-left a:hover {
+    color: #e67e22;
+}
+
+/* Right Side: Comment Form */
+.contact-right {
+    width: 60%;
+    text-align: left;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-right h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+/* Form Inputs */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.input-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Submit Button */
+.submit-button {
+    background-color: #2c3e50;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #34495e;
+    transform: scale(1.05);
+}
