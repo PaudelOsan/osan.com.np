@@ -1278,21 +1278,16 @@ footer {
 
     /* Tech Stack (Skills) */
     .skills-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 items per row */
-        gap: 10px;
-        margin-top: 20px;
-        justify-items: center; /* Center the skills */
-    }
-
-    .skill-row {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2 items per row */
-        gap: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center the skills */
+        gap: 15px;
+        width: 100%;
+        padding: 0;
     }
 
     .skill-item {
-        width: 100%;
+        width: 18%; /* Set a small width for each skill item */
         text-align: center;
         padding: 10px;
         font-size: 0.8em;
@@ -1307,13 +1302,14 @@ footer {
 
     /* Popups */
     .projects-popup {
-        width: 80%;
-        max-width: 400px; /* Reduced size */
-        height: 400px; /* Make the popup a square */
+        width: 50%; /* Reduced width */
+        height: 50%; /* Make the popup a square */
         padding: 15px;
         font-size: 0.9em;
         margin: auto; /* Center the popup */
         overflow-y: auto; /* Allow scrolling if needed */
+        max-width: 400px; /* Maximum width for popup */
+        max-height: 400px; /* Maximum height for popup */
     }
 
     .popup-content {
