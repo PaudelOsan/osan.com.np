@@ -1276,12 +1276,13 @@ footer {
         font-size: 14px; /* Reduce font size for better fit */
     }
 
-    /* About Section - Order Changes */
+    /* About Section */
     .about-content {
+        display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 10px;
+        gap: 10px; /* Reduced gap */
         padding: 10px;
     }
 
@@ -1289,45 +1290,47 @@ footer {
         width: 100%;
     }
 
-    /* Reversing the order of photo and description */
+    /* Image Section */
     .image-section {
-        order: 1; /* Photo comes first */
+        order: 1; /* Ensure the image comes first */
         display: flex;
         justify-content: center; /* Center the image */
-        align-items: center; /* Vertically center the image */
+        align-items: center;
+        margin-bottom: 15px; /* Add some space below the image */
     }
 
-    .text-section {
-        order: 2; /* Description comes second */
-        text-align: center; /* Ensure text is centered */
-        margin-top: 10px; /* Add some margin to space it out */
-    }
-
+    /* Profile Photo */
     #profile-photo {
-        width: 150px; /* Larger image */
+        width: 150px; /* Set a larger image size */
         height: 150px;
-        margin: 10px 0; /* Add space around the image */
-        border-radius: 50%; /* Make the photo circular */
-        object-fit: cover; /* Ensures the image fits well inside the circle */
+        border-radius: 50%; /* Make the image circular */
+        margin: 0; /* No margin around the image */
+        object-fit: cover; /* Ensure the image fits within the circle */
     }
 
-    .text-section h3, .text-section h4, .text-section p {
-        margin: 10px 0; /* Add some margin to the text */
+    /* Text Section */
+    .text-section {
+        order: 2; /* Make sure the text comes after the image */
+        text-align: center; /* Center the text */
+        margin-top: 10px; /* Add a bit of margin from the image */
     }
 
     .text-section h3 {
         font-size: 2em;
         font-weight: bold;
+        margin-bottom: 10px; /* Add space between the heading and the photo */
     }
 
     .text-section h4 {
         font-size: 1.6em;
         font-weight: 600;
+        margin-bottom: 10px; /* Space between subheading and description */
     }
 
     .text-section p {
         font-size: 1.1em;
         line-height: 1.5;
         color: #666;
+        margin-bottom: 10px; /* Add space between paragraph and other elements */
     }
 }
