@@ -1123,7 +1123,7 @@ footer {
         border-radius: 10px;
         padding: 5px;
         width: 100%;
-        margin: 0;
+        margin: 0; /* Remove margin */
     }
 
     nav ul li {
@@ -1148,17 +1148,145 @@ footer {
         display: none;
     }
 
-    /* Skills Section - 5 in One Line, 5 in Another */
+    /* Home Section */
+    .home-section {
+        margin-top: 70px;
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 15px;
+    }
+
+    .left-half, .right-half {
+        width: 100%;
+    }
+
+    #animated-image {
+        width: 80%;
+        max-width: 100%;
+        object-fit: contain;
+        margin-top: 15px;
+    }
+
+    /* About Section */
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center everything */
+        text-align: center;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .text-section, .image-section {
+        width: 100%;
+    }
+
+    /* Image Section */
+    .image-section {
+        order: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    /* Profile Photo */
+    #profile-photo {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin: 0;
+        object-fit: cover;
+    }
+
+    /* Text Section */
+    .text-section {
+        order: 2;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .text-section h3 {
+        font-size: 2em;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .text-section h4 {
+        font-size: 1.6em;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .text-section p {
+        font-size: 1.1em;
+        line-height: 1.5;
+        color: #666;
+        margin-bottom: 10px;
+    }
+
+    /* Stats Section - Horizontal layout */
+    .stats-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+
+    .stats-box {
+        width: 22%; /* Reduced size of stats box */
+        padding: 10px;
+        font-size: 0.8em;
+        text-align: center;
+        box-sizing: border-box;
+        margin-bottom: 20px; /* Added space between stats boxes */
+    }
+
+    .stats-box .icon-circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .stats-box .icon-circle img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Portfolio Showcase - Horizontal layout */
+    #portfolio {
+        margin-top: 50px;
+    }
+
+    .portfolio-rectangles {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .portfolio-item {
+        width: 22%;
+        text-align: center;
+        font-size: 0.9em;
+        padding: 12px;
+        margin: 5px 0;
+    }
+
+    /* Tech Stack (Skills) */
     .skills-container {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: wrap; /* Allow wrapping */
         justify-content: center; /* Center the skills */
         gap: 15px;
         width: 100%;
     }
 
     .skill-item {
-        width: 18%; /* Adjust width so 5 items fit per row */
+        width: 18%; /* Set a small width for each skill item */
         text-align: center;
         padding: 10px;
         font-size: 0.8em;
@@ -1187,54 +1315,12 @@ footer {
         padding: 15px;
     }
 
-    /* Portfolio Showcase - Horizontal layout */
-    #portfolio {
-        margin-top: 50px;
-    }
-
-    .portfolio-rectangles {
-        flex-direction: row;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .portfolio-item {
-        width: 22%;
-        text-align: center;
-        font-size: 0.9em;
-        padding: 12px;
-        margin: 5px 0;
-    }
-
-    /* Stats Section - Horizontal layout */
-    .stats-section {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 15px;
-        margin-top: 20px;
-        flex-wrap: wrap;
-    }
-
-    .stats-box {
-        width: 22%;
-        padding: 10px;
+    .project-card {
         font-size: 0.8em;
-        text-align: center;
-        box-sizing: border-box;
-        margin-bottom: 20px;
     }
 
-    .stats-box .icon-circle {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 10px;
-    }
-
-    .stats-box .icon-circle img {
-        width: 40px;
-        height: 40px;
+    .project-info {
+        margin-top: 10px;
     }
 
     /* Contact Section */
