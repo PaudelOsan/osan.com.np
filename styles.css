@@ -1269,3 +1269,181 @@ footer {
     background-color: #34495e;
     transform: scale(1.05);
 }
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 0 10px;
+        font-size: 14px; /* Reduce font size for better fit */
+    }
+
+    /* Navbar Adjustments */
+    nav ul {
+        display: flex; /* Display navbar items in a row */
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;  
+        background-color: #333;
+        border-radius: 10px;
+        padding: 5px;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 3px 10px;
+    }
+
+    nav ul li a {
+        padding: 15px;
+        color: #fff;
+        font-size: 1.1em;
+        background-color: #444;
+        border-radius: 5px;
+    }
+
+    nav ul li a:hover {
+        background-color: #f1c40f;
+        transform: scale(1.05);
+    }
+
+    /* Remove left side of navbar for mobile */
+    .steering-wheel-container {
+        display: none;
+    }
+
+    /* Home Section */
+    .home-section {
+        margin-top: 70px;
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 15px;
+    }
+
+    .left-half, .right-half {
+        width: 100%;
+    }
+
+    #animated-image {
+        max-width: 70%;
+        margin-top: 15px;
+    }
+
+    /* About Section */
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .text-section, .image-section {
+        width: 100%;
+    }
+
+    /* Stats Section */
+    .stats-section {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 5px; /* Reduced gap */
+        margin-bottom: 30px;
+    }
+
+    .stats-box {
+        width: 30%; /* Reduced width */
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    /* Portfolio Showcase */
+    #portfolio {
+        margin-top: 50px;
+    }
+
+    .portfolio-rectangles {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px; /* Reduced gap */
+    }
+
+    .portfolio-item {
+        width: 70%;
+        text-align: center;
+        font-size: 0.9em;
+        padding: 12px;
+        margin: 5px 0; /* Reduced margin */
+    }
+
+    /* Tech Stack (Skills) */
+    .skills-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .skill-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+        gap: 10px;
+    }
+
+    .skill-item {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        font-size: 0.8em;
+    }
+
+    .skill-item img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Popups */
+    .projects-popup {
+        width: 90%;
+        max-width: 500px;
+        padding: 15px;
+        font-size: 0.9em;
+    }
+
+    .popup-content {
+        padding: 15px;
+    }
+
+    .project-card {
+        font-size: 0.8em; /* Reduced font size */
+    }
+
+    .project-info {
+        margin-top: 10px;
+    }
+
+    /* Contact Section */
+    .contact-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .contact-left, .contact-right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact-right {
+        padding: 8px;
+    }
+
+    .input-group input, .input-group textarea {
+        font-size: 0.8em;
+        padding: 6px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 6px;
+        font-size: 0.7em;
+    }
+}
