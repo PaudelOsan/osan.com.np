@@ -1280,7 +1280,7 @@ footer {
     .about-content {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: center; /* Center everything */
         text-align: center;
         gap: 10px; /* Reduced gap */
         padding: 10px;
@@ -1292,33 +1292,33 @@ footer {
 
     /* Image Section */
     .image-section {
-        order: 1; /* Ensure the image comes first */
+        order: 1; /* Image first */
         display: flex;
         justify-content: center; /* Center the image */
         align-items: center;
-        margin-bottom: 15px; /* Add some space below the image */
+        margin-bottom: 15px; /* Space below the image */
     }
 
     /* Profile Photo */
     #profile-photo {
-        width: 150px; /* Set a larger image size */
-        height: 150px;
-        border-radius: 50%; /* Make the image circular */
-        margin: 0; /* No margin around the image */
-        object-fit: cover; /* Ensure the image fits within the circle */
+        width: 120px; /* Smaller image */
+        height: 120px;
+        border-radius: 50%; /* Circular image */
+        margin: 0; /* Remove margin around the image */
+        object-fit: cover; /* Ensures the image fits inside the circle */
     }
 
     /* Text Section */
     .text-section {
-        order: 2; /* Make sure the text comes after the image */
+        order: 2; /* Text below the image */
         text-align: center; /* Center the text */
-        margin-top: 10px; /* Add a bit of margin from the image */
+        margin-top: 10px;
     }
 
     .text-section h3 {
         font-size: 2em;
         font-weight: bold;
-        margin-bottom: 10px; /* Add space between the heading and the photo */
+        margin-bottom: 10px; /* Space between heading and photo */
     }
 
     .text-section h4 {
@@ -1331,6 +1331,125 @@ footer {
         font-size: 1.1em;
         line-height: 1.5;
         color: #666;
-        margin-bottom: 10px; /* Add space between paragraph and other elements */
+        margin-bottom: 10px; /* Space between paragraph and other elements */
+    }
+
+    /* Stats Section */
+    .stats-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: center; /* Center the stats section */
+        gap: 20px; /* Reduce space between stats boxes */
+        margin-top: 20px;
+    }
+
+    .stats-box {
+        width: 30%;
+        padding: 15px;
+        font-size: 0.9em;
+        text-align: center; /* Center the text */
+    }
+
+    .stats-box .icon-circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .stats-box .icon-circle img {
+        width: 40px; /* Adjust the size of the image in stats box */
+        height: 40px;
+    }
+
+    /* Portfolio Showcase */
+    #portfolio {
+        margin-top: 50px;
+    }
+
+    .portfolio-rectangles {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .portfolio-item {
+        width: 70%;
+        text-align: center;
+        font-size: 0.9em;
+        padding: 12px;
+        margin: 5px 0; /* Reduced margin */
+    }
+
+    /* Tech Stack (Skills) */
+    .skills-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .skill-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+        gap: 10px;
+    }
+
+    .skill-item {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        font-size: 0.8em;
+    }
+
+    .skill-item img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Popups */
+    .projects-popup {
+        width: 90%;
+        max-width: 500px;
+        padding: 15px;
+        font-size: 0.9em;
+    }
+
+    .popup-content {
+        padding: 15px;
+    }
+
+    .project-card {
+        font-size: 0.8em;
+    }
+
+    .project-info {
+        margin-top: 10px;
+    }
+
+    /* Contact Section */
+    .contact-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .contact-left, .contact-right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact-right {
+        padding: 8px;
+    }
+
+    .input-group input, .input-group textarea {
+        font-size: 0.8em;
+        padding: 6px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 6px;
+        font-size: 0.7em;
     }
 }
