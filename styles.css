@@ -1279,8 +1279,7 @@ footer {
     /* Tech Stack (Skills) */
     .skills-container {
         display: flex;
-        flex-direction: row; /* Display skills horizontally */
-        flex-wrap: wrap;
+        flex-wrap: wrap; /* Allow skills to wrap */
         justify-content: center; /* Center the skills */
         gap: 15px;
         width: 100%;
@@ -1350,5 +1349,30 @@ footer {
         padding: 6px;
         font-size: 0.7em;
     }
+
+    /* Projects, Certificates, Tech Stack, Experience (Hamburger) */
+    .portfolio-rectangles {
+        display: none; /* Initially hidden */
+    }
+
+    .portfolio-item.active {
+        display: block; /* Show when active */
+    }
+
+    /* Hamburger menu for projects */
+    .portfolio-item h4 {
+        cursor: pointer;
+        display: block;
+        background-color: #444;
+        color: white;
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 5px;
+    }
+
+    .portfolio-item h4:hover {
+        background-color: #646461;
+    }
 }
+
 
