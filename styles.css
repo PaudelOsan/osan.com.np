@@ -1272,13 +1272,13 @@ footer {
 /* Mobile Responsive Adjustments */
 @media (max-width: 768px) {
     body {
-        padding: 0 10px;
+        padding: 0; /* Removed padding on both sides */
         font-size: 14px; /* Reduce font size for better fit */
     }
 
     /* Navbar Adjustments */
     nav ul {
-        display: flex; /* Display navbar items in a row */
+        display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
@@ -1287,6 +1287,7 @@ footer {
         border-radius: 10px;
         padding: 5px;
         width: 100%;
+        margin: 0;
     }
 
     nav ul li {
@@ -1324,8 +1325,11 @@ footer {
         width: 100%;
     }
 
+    /* Make the home image larger */
     #animated-image {
-        max-width: 70%;
+        width: 80%; /* Increase width */
+        max-width: 100%; /* Ensure it fits within the screen */
+        object-fit: contain; /* Keep aspect ratio intact */
         margin-top: 15px;
     }
 
@@ -1346,12 +1350,12 @@ footer {
     .stats-section {
         flex-direction: row;
         justify-content: space-between;
-        gap: 5px; /* Reduced gap */
+        gap: 5px;
         margin-bottom: 30px;
     }
 
     .stats-box {
-        width: 30%; /* Reduced width */
+        width: 30%;
         padding: 10px;
         font-size: 0.9em;
     }
@@ -1364,7 +1368,7 @@ footer {
     .portfolio-rectangles {
         flex-direction: column;
         align-items: center;
-        gap: 5px; /* Reduced gap */
+        gap: 5px;
     }
 
     .portfolio-item {
@@ -1372,7 +1376,7 @@ footer {
         text-align: center;
         font-size: 0.9em;
         padding: 12px;
-        margin: 5px 0; /* Reduced margin */
+        margin: 5px 0;
     }
 
     /* Tech Stack (Skills) */
@@ -1414,7 +1418,7 @@ footer {
     }
 
     .project-card {
-        font-size: 0.8em; /* Reduced font size */
+        font-size: 0.8em;
     }
 
     .project-info {
