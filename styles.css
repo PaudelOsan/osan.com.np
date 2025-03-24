@@ -1106,10 +1106,10 @@ footer {
 /* Mobile Responsive Adjustments */
 @media (max-width: 768px) {
     body {
-        margin: 0; /* Remove margin */
-        padding: 0; /* Remove padding */
-        font-size: 14px; /* Reduce font size for better fit */
-        overflow-x: hidden; /* Prevent horizontal overflow */
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        overflow-x: hidden;
     }
 
     /* Navbar Adjustments */
@@ -1123,7 +1123,7 @@ footer {
         border-radius: 10px;
         padding: 5px;
         width: 100%;
-        margin: 0; /* Remove margin */
+        margin: 0;
     }
 
     nav ul li {
@@ -1148,101 +1148,81 @@ footer {
         display: none;
     }
 
-    /* Home Section */
-    .home-section {
-        margin-top: 70px;
-        flex-direction: column;
+    /* Skills Section - 5 in One Line, 5 in Another */
+    .skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center the skills */
+        gap: 15px;
+        width: 100%;
+    }
+
+    .skill-item {
+        width: 18%; /* Adjust width so 5 items fit per row */
         text-align: center;
-        height: auto;
+        padding: 10px;
+        font-size: 0.8em;
+        background-color: #444343;
+        border-radius: 10px;
+    }
+
+    .skill-item img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Popups */
+    .projects-popup {
+        width: 80%;
+        height: 80%;
+        padding: 15px;
+        font-size: 0.9em;
+        margin: auto;
+        overflow-y: auto;
+        max-width: 400px;
+        max-height: 400px;
+    }
+
+    .popup-content {
         padding: 15px;
     }
 
-    .left-half, .right-half {
-        width: 100%;
+    /* Portfolio Showcase - Horizontal layout */
+    #portfolio {
+        margin-top: 50px;
     }
 
-    #animated-image {
-        width: 80%; /* Make image larger */
-        max-width: 100%; /* Ensure it fits within the screen */
-        object-fit: contain;
-        margin-top: 15px;
+    .portfolio-rectangles {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
     }
 
-    /* About Section */
-    .about-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Center everything */
+    .portfolio-item {
+        width: 22%;
         text-align: center;
-        gap: 10px; /* Reduced gap */
-        padding: 10px;
-    }
-
-    .text-section, .image-section {
-        width: 100%;
-    }
-
-    /* Image Section */
-    .image-section {
-        order: 1; /* Image first */
-        display: flex;
-        justify-content: center; /* Center the image */
-        align-items: center;
-        margin-bottom: 15px;
-    }
-
-    /* Profile Photo */
-    #profile-photo {
-        width: 120px; /* Smaller image */
-        height: 120px;
-        border-radius: 50%;
-        margin: 0;
-        object-fit: cover;
-    }
-
-    /* Text Section */
-    .text-section {
-        order: 2; /* Text below the image */
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    .text-section h3 {
-        font-size: 2em;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-
-    .text-section h4 {
-        font-size: 1.6em;
-        font-weight: 600;
-        margin-bottom: 10px;
-    }
-
-    .text-section p {
-        font-size: 1.1em;
-        line-height: 1.5;
-        color: #666;
-        margin-bottom: 10px;
+        font-size: 0.9em;
+        padding: 12px;
+        margin: 5px 0;
     }
 
     /* Stats Section - Horizontal layout */
     .stats-section {
         display: flex;
-        flex-direction: row; /* Stats are aligned horizontally */
-        justify-content: center; /* Center the stats section */
-        gap: 15px; /* Reduced gap */
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
         margin-top: 20px;
         flex-wrap: wrap;
     }
 
     .stats-box {
-        width: 22%; /* Reduced size of stats box */
+        width: 22%;
         padding: 10px;
-        font-size: 0.8em; /* Smaller font size */
+        font-size: 0.8em;
         text-align: center;
         box-sizing: border-box;
-        margin-bottom: 20px; /* Added space between stats boxes */
+        margin-bottom: 20px;
     }
 
     .stats-box .icon-circle {
@@ -1257,77 +1237,11 @@ footer {
         height: 40px;
     }
 
-    /* Portfolio Showcase - Horizontal layout */
-    #portfolio {
-        margin-top: 50px;
-    }
-
-    .portfolio-rectangles {
-        flex-direction: row; /* Align portfolio items horizontally */
-        justify-content: center;
-        gap: 15px; /* Added gap between items */
-    }
-
-    .portfolio-item {
-        width: 22%; /* Adjusted width of portfolio items */
-        text-align: center;
-        font-size: 0.9em;
-        padding: 12px;
-        margin: 5px 0;
-    }
-
-    /* Tech Stack (Skills) */
-    .skills-container {
-        display: flex;
-        flex-wrap: wrap; /* Allow skills to wrap */
-        justify-content: center; /* Center the skills */
-        gap: 15px;
-        width: 100%;
-    }
-
-    .skill-item {
-        width: 18%; /* Set a small width for each skill item */
-        text-align: center;
-        padding: 10px;
-        font-size: 0.8em;
-        background-color: #444343; /* Background for the skills box */
-        border-radius: 10px; /* Rounded corners */
-    }
-
-    .skill-item img {
-        width: 40px;
-        height: 40px;
-    }
-
-    /* Popups */
-    .projects-popup {
-        width: 80%; /* Reduced width */
-        height: 80%; /* Make the popup square */
-        padding: 15px;
-        font-size: 0.9em;
-        margin: auto; /* Center the popup */
-        overflow-y: auto; /* Allow scrolling if needed */
-        max-width: 400px; /* Maximum width for popup */
-        max-height: 400px; /* Maximum height for popup */
-    }
-
-    .popup-content {
-        padding: 15px;
-    }
-
-    .project-card {
-        font-size: 0.8em;
-    }
-
-    .project-info {
-        margin-top: 10px;
-    }
-
     /* Contact Section */
     .contact-container {
         flex-direction: column;
         padding: 10px;
-        margin-top: 30px; /* Increased space between contact and other sections */
+        margin-top: 30px;
     }
 
     .contact-left, .contact-right {
@@ -1349,30 +1263,4 @@ footer {
         padding: 6px;
         font-size: 0.7em;
     }
-
-    /* Projects, Certificates, Tech Stack, Experience (Hamburger) */
-    .portfolio-rectangles {
-        display: none; /* Initially hidden */
-    }
-
-    .portfolio-item.active {
-        display: block; /* Show when active */
-    }
-
-    /* Hamburger menu for projects */
-    .portfolio-item h4 {
-        cursor: pointer;
-        display: block;
-        background-color: #444;
-        color: white;
-        padding: 10px;
-        margin: 5px 0;
-        border-radius: 5px;
-    }
-
-    .portfolio-item h4:hover {
-        background-color: #646461;
-    }
 }
-
-
