@@ -1272,10 +1272,11 @@ footer {
 /* Mobile Responsive Adjustments */
 @media (max-width: 768px) {
     body {
-        margin: 0; /* Removed margin on the body to prevent right-side gap */
-        padding: 0; /* Remove padding */
+        margin: 0; /* Removed margin on the body */
+        padding: 0; /* Removed padding on both sides */
         font-size: 14px; /* Reduce font size for better fit */
         overflow-x: hidden; /* Prevent horizontal overflow */
+        background-attachment: scroll; /* Ensure the background doesn't repeat or cause overflow */
     }
 
     /* Navbar Adjustments */
@@ -1332,6 +1333,7 @@ footer {
         max-width: 100%; /* Ensure it fits within the screen */
         object-fit: contain; /* Keep aspect ratio intact */
         margin-top: 15px;
+        background: none; /* Ensure no background causes repeating */
     }
 
     /* About Section */
@@ -1512,3 +1514,4 @@ footer {
         font-size: 0.7em;
     }
 }
+
