@@ -1272,8 +1272,66 @@ footer {
 /* Mobile Responsive Adjustments */
 @media (max-width: 768px) {
     body {
-        padding: 0; /* Removed padding on both sides */
+        margin: 0; /* Removed margin on the body to prevent right-side gap */
+        padding: 0; /* Remove padding */
         font-size: 14px; /* Reduce font size for better fit */
+        overflow-x: hidden; /* Prevent horizontal overflow */
+    }
+
+    /* Navbar Adjustments */
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;  
+        background-color: #333;
+        border-radius: 10px;
+        padding: 5px;
+        width: 100%;
+        margin: 0; /* Removed margin */
+    }
+
+    nav ul li {
+        margin: 3px 10px;
+    }
+
+    nav ul li a {
+        padding: 15px;
+        color: #fff;
+        font-size: 1.1em;
+        background-color: #444;
+        border-radius: 5px;
+    }
+
+    nav ul li a:hover {
+        background-color: #f1c40f;
+        transform: scale(1.05);
+    }
+
+    /* Remove left side of navbar for mobile */
+    .steering-wheel-container {
+        display: none;
+    }
+
+    /* Home Section */
+    .home-section {
+        margin-top: 70px;
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 15px;
+    }
+
+    .left-half, .right-half {
+        width: 100%;
+    }
+
+    #animated-image {
+        width: 80%; /* Make image larger */
+        max-width: 100%; /* Ensure it fits within the screen */
+        object-fit: contain; /* Keep aspect ratio intact */
+        margin-top: 15px;
     }
 
     /* About Section */
@@ -1334,17 +1392,18 @@ footer {
         margin-bottom: 10px; /* Space between paragraph and other elements */
     }
 
-    /* Stats Section */
+    /* Stats Section - Horizontal layout */
     .stats-section {
         display: flex;
-        flex-direction: row;
+        flex-direction: row; /* Keep the stats horizontal */
         justify-content: center; /* Center the stats section */
         gap: 20px; /* Reduce space between stats boxes */
         margin-top: 20px;
+        flex-wrap: wrap; /* Allow wrapping for smaller screens */
     }
 
     .stats-box {
-        width: 30%;
+        width: 30%; /* Width of each stat box */
         padding: 15px;
         font-size: 0.9em;
         text-align: center; /* Center the text */
@@ -1370,7 +1429,7 @@ footer {
     .portfolio-rectangles {
         flex-direction: column;
         align-items: center;
-        gap: 5px;
+        gap: 5px; /* Reduced gap */
     }
 
     .portfolio-item {
