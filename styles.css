@@ -1296,6 +1296,8 @@ footer {
         text-align: center;
         padding: 10px;
         font-size: 0.8em;
+        background-color: #444343; /* Background for the skills box */
+        border-radius: 10px; /* Rounded corners */
     }
 
     .skill-item img {
@@ -1305,12 +1307,13 @@ footer {
 
     /* Popups */
     .projects-popup {
-        width: 90%;
+        width: 80%;
         max-width: 400px; /* Reduced size */
         height: 400px; /* Make the popup a square */
         padding: 15px;
         font-size: 0.9em;
         margin: auto; /* Center the popup */
+        overflow-y: auto; /* Allow scrolling if needed */
     }
 
     .popup-content {
