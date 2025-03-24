@@ -1279,11 +1279,11 @@ footer {
     /* Tech Stack (Skills) */
     .skills-container {
         display: flex;
+        flex-direction: row; /* Display skills horizontally */
         flex-wrap: wrap;
         justify-content: center; /* Center the skills */
         gap: 15px;
         width: 100%;
-        padding: 0;
     }
 
     .skill-item {
@@ -1302,8 +1302,8 @@ footer {
 
     /* Popups */
     .projects-popup {
-        width: 50%; /* Reduced width */
-        height: 50%; /* Make the popup a square */
+        width: 80%; /* Reduced width */
+        height: 80%; /* Make the popup square */
         padding: 15px;
         font-size: 0.9em;
         margin: auto; /* Center the popup */
