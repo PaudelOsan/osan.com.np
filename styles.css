@@ -1237,7 +1237,7 @@ footer {
     }
 
     .stats-box {
-        width: 25%; /* Reduced size of stats box */
+        width: 22%; /* Reduced size of stats box */
         padding: 10px;
         font-size: 0.8em; /* Smaller font size */
         text-align: center;
@@ -1257,20 +1257,19 @@ footer {
         height: 40px;
     }
 
-    /* Portfolio Showcase */
+    /* Portfolio Showcase - Horizontal layout */
     #portfolio {
         margin-top: 50px;
     }
 
     .portfolio-rectangles {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 20px;
+        flex-direction: row; /* Align portfolio items horizontally */
+        justify-content: center;
+        gap: 15px; /* Added gap between items */
     }
 
     .portfolio-item {
-        width: 70%;
+        width: 22%; /* Adjusted width of portfolio items */
         text-align: center;
         font-size: 0.9em;
         padding: 12px;
