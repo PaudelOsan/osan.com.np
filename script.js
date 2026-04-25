@@ -3,10 +3,10 @@ const navLinks = document.getElementById("navLinks");
 const navbar = document.querySelector(".navbar");
 const themeBtn = document.getElementById("themeBtn");
 const themeIcon = document.getElementById("themeIcon");
-const hero = document.querySelector(".hero");
-const heroGlow = document.getElementById("heroGlow");
+const cursorGlow = document.getElementById("cursorGlow");
+const canvas = document.getElementById("bgCanvas");
+const ctx = canvas.getContext("2d");
 
-/* Mobile menu */
 if (menuBtn && navLinks) {
   menuBtn.addEventListener("click", () => {
     navLinks.classList.toggle("show");
@@ -19,42 +19,50 @@ if (menuBtn && navLinks) {
   });
 }
 
-/* Dark / light mode */
 function applyTheme(theme) {
-  if (theme === "dark") {
-    document.body.classList.add("dark-mode");
-
-    if (themeIcon) {
-      themeIcon.textContent = "☀️";
-    }
-
-    localStorage.setItem("theme", "dark");
-  } else {
-    document.body.classList.remove("dark-mode");
-
-    if (themeIcon) {
-      themeIcon.textContent = "🌙";
-    }
-
+  if (theme === "light") {
+    document.body.classList.add("light-mode");
+    themeIcon.textContent = "☾";
     localStorage.setItem("theme", "light");
+  } else {
+    document.body.classList.remove("light-mode");
+    themeIcon.textContent = "☀";
+    localStorage.setItem("theme", "dark");
   }
 }
 
-const savedTheme = localStorage.getItem("theme") || "light";
-applyTheme(savedTheme);
+applyTheme(localStorage.getItem("theme") || "dark");
 
-if (themeBtn) {
-  themeBtn.addEventListener("click", () => {
-    const currentTheme = document.body.classList.contains("dark-mode")
-      ? "dark"
-      : "light";
+themeBtn.addEventListener("click", () => {
+  const isLight = document.body.classList.contains("light-mode");
+  applyTheme(isLight ? "dark" : "light");
+});
 
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
-    applyTheme(newTheme);
-  });
-}
+window.addEventListener("mousemove", (event) => {
+  if (!cursorGlow) return;
 
-/* Project filter with animation */
+  cursorGlow.style.left = `${event.clientX}px`;
+  cursorGlow.style.top = `${event.clientY}px`;
+});
+
+window.addEventListener("mouseleave", () => {
+  if (cursorGlow) cursorGlow.style.opacity = "0";
+});
+
+window.addEventListener("mouseenter", () => {
+  if (cursorGlow) cursorGlow.style.opacity = "0.9";
+});
+
+window.addEventListener("scroll", () => {
+  if (!navbar) return;
+
+  if (window.scrollY > 20) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
+
 const tabButtons = document.querySelectorAll(".tab-btn");
 const projectCards = document.querySelectorAll(".project-card");
 
@@ -84,36 +92,12 @@ tabButtons.forEach((button) => {
   });
 });
 
-/* Navbar shadow on scroll */
-window.addEventListener("scroll", () => {
-  if (!navbar) return;
-
-  if (window.scrollY > 20) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
-});
-
-/* Scroll reveal animation */
 const revealItems = document.querySelectorAll(
-  ".section-heading, .about-grid, .skill-card, .project-card, .timeline-card, .cert-card, .contact-grid"
+  ".section-heading, .section-copy, .about-card, .skill-card, .project-card, .timeline-card, .cert-card, .contact-card, .tech-strip"
 );
 
-revealItems.forEach((item, index) => {
+revealItems.forEach((item) => {
   item.classList.add("reveal");
-
-  if (index % 4 === 1) {
-    item.classList.add("reveal-delay-1");
-  }
-
-  if (index % 4 === 2) {
-    item.classList.add("reveal-delay-2");
-  }
-
-  if (index % 4 === 3) {
-    item.classList.add("reveal-delay-3");
-  }
 });
 
 const revealObserver = new IntersectionObserver(
@@ -133,21 +117,17 @@ revealItems.forEach((item) => {
   revealObserver.observe(item);
 });
 
-/* Active navbar link while scrolling */
 const sections = document.querySelectorAll("section[id]");
 const navItems = document.querySelectorAll(".nav-links a");
 
 window.addEventListener("scroll", () => {
-  let currentSection = "";
+  let currentSection = "home";
 
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 140;
+    const sectionTop = section.offsetTop - 150;
     const sectionHeight = section.offsetHeight;
 
-    if (
-      window.scrollY >= sectionTop &&
-      window.scrollY < sectionTop + sectionHeight
-    ) {
+    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
       currentSection = section.getAttribute("id");
     }
   });
@@ -161,38 +141,16 @@ window.addEventListener("scroll", () => {
   });
 });
 
-/* Hero mouse glow */
-if (hero && heroGlow) {
-  hero.addEventListener("mousemove", (event) => {
-    const rect = hero.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-
-    heroGlow.style.left = `${x}px`;
-    heroGlow.style.top = `${y}px`;
-  });
-
-  hero.addEventListener("mouseleave", () => {
-    heroGlow.style.left = "50%";
-    heroGlow.style.top = "50%";
-  });
-}
-
-/* Card tilt effect */
-const tiltCards = document.querySelectorAll(".card, .profile-card");
+const tiltCards = document.querySelectorAll(".tilt-card");
 
 tiltCards.forEach((card) => {
   card.addEventListener("mousemove", (event) => {
     const rect = card.getBoundingClientRect();
-
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
 
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    const rotateX = ((y - centerY) / centerY) * -3;
-    const rotateY = ((x - centerX) / centerX) * 3;
+    const rotateX = ((y - rect.height / 2) / rect.height) * -8;
+    const rotateY = ((x - rect.width / 2) / rect.width) * 8;
 
     card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
   });
@@ -202,13 +160,11 @@ tiltCards.forEach((card) => {
   });
 });
 
-/* Magnetic button effect */
-const magneticItems = document.querySelectorAll(".btn, .tab-btn, .contact-card a");
+const magneticItems = document.querySelectorAll(".magnetic");
 
 magneticItems.forEach((item) => {
   item.addEventListener("mousemove", (event) => {
     const rect = item.getBoundingClientRect();
-
     const x = event.clientX - rect.left - rect.width / 2;
     const y = event.clientY - rect.top - rect.height / 2;
 
@@ -219,3 +175,71 @@ magneticItems.forEach((item) => {
     item.style.transform = "";
   });
 });
+
+let particles = [];
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
+function createParticles() {
+  particles = [];
+
+  const count = Math.min(90, Math.floor(window.innerWidth / 18));
+
+  for (let i = 0; i < count; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 0.35,
+      vy: (Math.random() - 0.5) * 0.35,
+      size: Math.random() * 1.8 + 0.6,
+      opacity: Math.random() * 0.5 + 0.15,
+    });
+  }
+}
+
+function drawParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  particles.forEach((particle, index) => {
+    particle.x += particle.vx;
+    particle.y += particle.vy;
+
+    if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
+    if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
+
+    ctx.beginPath();
+    ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(110, 231, 255, ${particle.opacity})`;
+    ctx.fill();
+
+    for (let j = index + 1; j < particles.length; j++) {
+      const other = particles[j];
+      const dx = particle.x - other.x;
+      const dy = particle.y - other.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < 120) {
+        ctx.beginPath();
+        ctx.moveTo(particle.x, particle.y);
+        ctx.lineTo(other.x, other.y);
+        ctx.strokeStyle = `rgba(110, 231, 255, ${0.09 * (1 - distance / 120)})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+    }
+  });
+
+  requestAnimationFrame(drawParticles);
+}
+
+window.addEventListener("resize", () => {
+  resizeCanvas();
+  createParticles();
+});
+
+resizeCanvas();
+createParticles();
+drawParticles();
