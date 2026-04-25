@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* Working light / dark mode */
+  /* Light / dark mode */
   function applyTheme(theme) {
     if (theme === "light") {
       document.body.classList.add("light-mode");
@@ -56,12 +56,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* Smooth mouse tracking */
+  /* Mouse tracking */
   window.addEventListener("mousemove", (event) => {
     mouseX = event.clientX;
     mouseY = event.clientY;
   });
 
+  /* Smooth cursor glow */
   function animateCursorGlow() {
     glowX += (mouseX - glowX) * 0.08;
     glowY += (mouseY - glowY) * 0.08;
@@ -88,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* Hero 3D parallax follows mouse softly */
+  /* Hero 3D parallax follows mouse */
   const artStage = document.querySelector(".art-stage");
 
   function animateArtStage() {
@@ -209,14 +210,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
 
-      const rotateX = ((y - rect.height / 2) / rect.height) * -3.5;
-      const rotateY = ((x - rect.width / 2) / rect.width) * 3.5;
+      const rotateX = ((y - rect.height / 2) / rect.height) * -2.2;
+      const rotateY = ((x - rect.width / 2) / rect.width) * 2.2;
 
       card.style.transform = `
         perspective(1000px)
         rotateX(${rotateX}deg)
         rotateY(${rotateY}deg)
-        translateY(-4px)
+        translateY(-2px)
       `;
     });
 
@@ -235,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const x = event.clientX - rect.left - rect.width / 2;
       const y = event.clientY - rect.top - rect.height / 2;
 
-      item.style.transform = `translate(${x * 0.035}px, ${y * 0.055}px)`;
+      item.style.transform = `translate(${x * 0.025}px, ${y * 0.035}px)`;
     });
 
     item.addEventListener("mouseleave", () => {
@@ -295,13 +296,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const isLight = document.body.classList.contains("light-mode");
-        const particleColor = isLight
-          ? `rgba(37, 99, 235, ${particle.opacity})`
-          : `rgba(110, 231, 255, ${particle.opacity})`;
 
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = particleColor;
+        ctx.fillStyle = isLight
+          ? `rgba(37, 99, 235, ${particle.opacity})`
+          : `rgba(110, 231, 255, ${particle.opacity})`;
         ctx.fill();
 
         for (let j = index + 1; j < particles.length; j++) {
