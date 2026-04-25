@@ -9,19 +9,20 @@
 
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <header class="navbar">
     <div class="container nav-content">
-      <a class="logo" href="#home" aria-label="Osan Paudel home">
+      <a class="logo" href="#home">
         <span class="logo-mark">OP</span>
         <span>Osan Paudel</span>
       </a>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu">
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
         ☰
       </button>
 
-      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <nav class="nav-links" id="navLinks">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
@@ -40,7 +41,7 @@
 
           <h1>
             Software Support Analyst,
-            <span>IT Support Technician</span>
+            IT Support Technician
             & Junior Developer.
           </h1>
 
@@ -62,9 +63,7 @@
         </div>
 
         <aside class="profile-card">
-          <div class="profile-image-wrap">
-            <img src="images/P4.jpeg" alt="Osan Paudel" class="profile-image" />
-          </div>
+          <div class="initial-card">OP</div>
 
           <h2>Osan Paudel</h2>
           <p class="profile-role">Software Support Graduate</p>
@@ -75,8 +74,8 @@
 
           <div class="profile-tags">
             <span>IT Support</span>
+            <span>Software Support</span>
             <span>Web Development</span>
-            <span>Cloud Basics</span>
             <span>VirtualBox Labs</span>
           </div>
         </aside>
@@ -102,7 +101,7 @@
       </div>
     </section>
 
-    <section id="skills" class="section">
+    <section id="skills" class="section section-light">
       <div class="container">
         <div class="section-heading">
           <p class="section-label">Skills</p>
@@ -130,15 +129,15 @@
           </article>
 
           <article class="card skill-card">
-            <div class="skill-icon">JS</div>
+            <div class="skill-icon">WEB</div>
             <h3>Web Development</h3>
-            <p>HTML, CSS, JavaScript, PHP, Ajax, JSON, responsive design, and interactive web features.</p>
+            <p>HTML, CSS, JavaScript, PHP, responsive design, interactive web features, and front-end development.</p>
           </article>
 
           <article class="card skill-card">
-            <div class="skill-icon">C#</div>
+            <div class="skill-icon">DEV</div>
             <h3>Programming</h3>
-            <p>JavaScript, Python, Java, C#, C, PHP, debugging, problem-solving, and assignment-based projects.</p>
+            <p>JavaScript, Python, Java, C#, C, PHP, debugging, problem-solving, and project-based learning.</p>
           </article>
 
           <article class="card skill-card">
@@ -148,17 +147,17 @@
           </article>
         </div>
 
-        <div class="logo-strip" aria-label="Technology logos">
+        <div class="logo-strip">
           <img src="images/html.webp" alt="HTML logo" />
           <img src="images/css.png" alt="CSS logo" />
           <img src="images/js.webp" alt="JavaScript logo" />
           <img src="images/python.webp" alt="Python logo" />
           <img src="images/java.webp" alt="Java logo" />
           <img src="images/c.png" alt="C logo" />
-          <img src="images/cc.png" alt="C sharp logo" />
+          <img src="images/cc.png" alt="C# logo" />
           <img src="images/mysql.jpg" alt="MySQL logo" />
-          <img src="images/office.png" alt="Microsoft Office logo" />
           <img src="images/github.svg" alt="GitHub logo" />
+          <img src="images/office.png" alt="Microsoft Office logo" />
         </div>
       </div>
     </section>
@@ -168,7 +167,7 @@
         <div class="section-heading">
           <p class="section-label">Projects</p>
           <h2>Projects & Labs</h2>
-          <p>A mix of IT support labs, web projects, academic assignments, and game development practice.</p>
+          <p>A clean showcase of IT labs, web projects, programming projects, and game development practice.</p>
         </div>
 
         <div class="project-tabs">
@@ -178,12 +177,15 @@
           <button class="tab-btn" data-filter="game">Games</button>
         </div>
 
-        <div class="projects-grid" id="projectGrid">
+        <div class="projects-grid">
           <article class="card project-card" data-type="support">
-            <img src="images/project.png" alt="Project icon" class="project-img" />
-            <span class="project-type">IT Lab</span>
+            <div class="project-top">
+              <span class="project-type">IT Lab</span>
+            </div>
             <h3>Active Directory Home Lab</h3>
-            <p>Built a self-directed Windows Server lab using VirtualBox. Installed and configured Active Directory Domain Services, created users and groups, practiced password resets, and performed basic account management tasks.</p>
+            <p>
+              Built a self-directed Windows Server lab using VirtualBox. Installed and configured Active Directory Domain Services, created users and groups, practiced password resets, and performed basic account management tasks.
+            </p>
             <div class="tech-list">
               <span>VirtualBox</span>
               <span>Windows Server</span>
@@ -192,10 +194,18 @@
           </article>
 
           <article class="card project-card" data-type="web">
-            <img src="images/home.gif" alt="Portfolio preview animation" class="project-img" />
-            <span class="project-type">Web Project</span>
+            <div class="project-top">
+              <span class="project-type">Web Project</span>
+              <div class="project-logos">
+                <img src="images/html.webp" alt="HTML logo" />
+                <img src="images/css.png" alt="CSS logo" />
+                <img src="images/js.webp" alt="JavaScript logo" />
+              </div>
+            </div>
             <h3>Personal Portfolio Website</h3>
-            <p>Designed and developed a responsive portfolio website to showcase technical skills, academic projects, certifications, experience, and resume.</p>
+            <p>
+              Designed and developed a responsive portfolio website to showcase technical skills, projects, certifications, experience, and resume.
+            </p>
             <div class="tech-list">
               <span>HTML</span>
               <span>CSS</span>
@@ -204,10 +214,16 @@
           </article>
 
           <article class="card project-card" data-type="game">
-            <img src="images/project1.png" alt="Game project icon" class="project-img" />
-            <span class="project-type">Game Project</span>
+            <div class="project-top">
+              <span class="project-type">Game Project</span>
+              <div class="project-logos">
+                <img src="images/js.webp" alt="JavaScript logo" />
+              </div>
+            </div>
             <h3>Space Warship Game</h3>
-            <p>Built a browser-based game where the player controls a warship, attacks enemy ships, avoids obstacles, and uses movement and scoring logic.</p>
+            <p>
+              Built a browser-based game where the player controls a warship, attacks enemy ships, avoids obstacles, and uses movement and scoring logic.
+            </p>
             <div class="tech-list">
               <span>JavaScript</span>
               <span>Game Logic</span>
@@ -216,10 +232,16 @@
           </article>
 
           <article class="card project-card" data-type="game">
-            <img src="images/piratewheel.png" alt="Game icon" class="project-img" />
-            <span class="project-type">Game Project</span>
+            <div class="project-top">
+              <span class="project-type">Game Project</span>
+              <div class="project-logos">
+                <img src="images/js.webp" alt="JavaScript logo" />
+              </div>
+            </div>
             <h3>Obstacle Jumping Game</h3>
-            <p>Created a jumping obstacle game with timed movement, basic animation, scoring, and collision detection.</p>
+            <p>
+              Created a jumping obstacle game with timed movement, basic animation, scoring, and collision detection.
+            </p>
             <div class="tech-list">
               <span>JavaScript</span>
               <span>DOM</span>
@@ -228,10 +250,16 @@
           </article>
 
           <article class="card project-card" data-type="game">
-            <img src="images/coming soon.jpg" alt="Puzzle game placeholder" class="project-img" />
-            <span class="project-type">Game Project</span>
+            <div class="project-top">
+              <span class="project-type">Game Project</span>
+              <div class="project-logos">
+                <img src="images/js.webp" alt="JavaScript logo" />
+              </div>
+            </div>
             <h3>JavaScript Puzzle Game</h3>
-            <p>Developed an interactive puzzle game using JavaScript with user input, logic handling, and problem-solving mechanics.</p>
+            <p>
+              Developed an interactive puzzle game using JavaScript with user input, logic handling, and problem-solving mechanics.
+            </p>
             <div class="tech-list">
               <span>JavaScript</span>
               <span>Events</span>
@@ -240,10 +268,16 @@
           </article>
 
           <article class="card project-card" data-type="game">
-            <img src="images/project.png" alt="C sharp game project" class="project-img" />
-            <span class="project-type">C# Project</span>
+            <div class="project-top">
+              <span class="project-type">C# Project</span>
+              <div class="project-logos">
+                <img src="images/cc.png" alt="C# logo" />
+              </div>
+            </div>
             <h3>C# Game Project</h3>
-            <p>Created a C# game project to practice object-oriented programming, game logic, user interaction, and debugging.</p>
+            <p>
+              Created a C# game project to practice object-oriented programming, game logic, user interaction, and debugging.
+            </p>
             <div class="tech-list">
               <span>C#</span>
               <span>OOP</span>
@@ -251,23 +285,14 @@
             </div>
           </article>
 
-          <article class="card project-card" data-type="web">
-            <img src="images/project1.png" alt="Academic project icon" class="project-img" />
-            <span class="project-type">Academic Project</span>
-            <h3>JavaScript Assignments</h3>
-            <p>Completed multiple JavaScript-based academic assignments involving functions, arrays, DOM manipulation, events, forms, validation, and interactive web features.</p>
-            <div class="tech-list">
-              <span>JavaScript</span>
-              <span>HTML</span>
-              <span>CSS</span>
-            </div>
-          </article>
-
           <article class="card project-card" data-type="support">
-            <img src="images/workexperience.png" alt="Work experience icon" class="project-img" />
-            <span class="project-type">Support Practice</span>
+            <div class="project-top">
+              <span class="project-type">Support Practice</span>
+            </div>
             <h3>Windows Troubleshooting Practice</h3>
-            <p>Practiced support tasks including checking IP configuration, troubleshooting connectivity, installing software, and documenting basic fixes.</p>
+            <p>
+              Practiced support tasks including checking IP configuration, troubleshooting connectivity, installing software, and documenting basic fixes.
+            </p>
             <div class="tech-list">
               <span>Windows</span>
               <span>Networking</span>
@@ -276,10 +301,13 @@
           </article>
 
           <article class="card project-card" data-type="support">
-            <img src="images/certificate.png" alt="Certificate icon" class="project-img" />
-            <span class="project-type">Cloud Learning</span>
+            <div class="project-top">
+              <span class="project-type">Cloud Learning</span>
+            </div>
             <h3>Azure Fundamentals</h3>
-            <p>Completed Microsoft Azure Fundamentals AZ-900 and learned core cloud concepts, Azure services, pricing, identity, and security basics.</p>
+            <p>
+              Completed Microsoft Azure Fundamentals AZ-900 and learned core cloud concepts, Azure services, pricing, identity, and security basics.
+            </p>
             <div class="tech-list">
               <span>Azure</span>
               <span>AZ-900</span>
@@ -290,7 +318,7 @@
       </div>
     </section>
 
-    <section id="experience" class="section">
+    <section id="experience" class="section section-light">
       <div class="container">
         <div class="section-heading">
           <p class="section-label">Experience</p>
@@ -324,7 +352,7 @@
             <h3>Computer Systems Technician – Software Support</h3>
             <ul>
               <li>Studied software support, web development, programming, databases, systems analysis, testing, and technical communication.</li>
-              <li>Completed academic projects using JavaScript, Python, Java, C#, PHP, MySQL, HTML, and CSS.</li>
+              <li>Completed projects using JavaScript, Python, Java, C#, PHP, MySQL, HTML, and CSS.</li>
             </ul>
           </article>
         </div>
@@ -341,7 +369,7 @@
 
         <div class="cert-grid">
           <article class="card cert-card">
-            <img src="images/certificate.png" alt="Certificate icon" />
+            <span class="cert-badge">AZ</span>
             <div>
               <h3>Microsoft Azure Fundamentals AZ-900</h3>
               <p>Cloud concepts, Azure services, pricing, identity, security, and compliance fundamentals.</p>
@@ -349,7 +377,7 @@
           </article>
 
           <article class="card cert-card">
-            <img src="images/certificate.png" alt="Certificate icon" />
+            <span class="cert-badge">IT</span>
             <div>
               <h3>Google IT Support Certificate</h3>
               <p>Technical support fundamentals, networking basics, operating systems, troubleshooting, and customer support concepts.</p>
@@ -359,7 +387,7 @@
       </div>
     </section>
 
-    <section id="contact" class="section">
+    <section id="contact" class="section contact-section">
       <div class="container contact-grid">
         <div>
           <p class="section-label">Contact</p>
