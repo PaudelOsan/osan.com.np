@@ -1042,3 +1042,147 @@ footer {
     height: 260px;
   }
 }
+/* =========================
+   SMOOTHER HOVER + LIGHT MODE FIX
+   ========================= */
+
+/* Softer card movement */
+.card,
+.tilt-card {
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+.card:hover {
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.28),
+    0 0 30px rgba(110, 231, 255, 0.08);
+}
+
+/* Less sharp magnetic movement */
+.btn,
+.tab-btn,
+.contact-card a,
+.theme-btn,
+.menu-btn {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+/* Make cursor glow smoother */
+.cursor-glow {
+  mix-blend-mode: screen;
+  transition:
+    left 0.14s ease-out,
+    top 0.14s ease-out,
+    opacity 0.25s ease,
+    background 0.35s ease;
+}
+
+/* Ambient animated background glow */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(110, 231, 255, 0.08), transparent 28%),
+    radial-gradient(circle at 80% 20%, rgba(255, 157, 66, 0.08), transparent 30%),
+    radial-gradient(circle at 50% 80%, rgba(139, 92, 246, 0.07), transparent 32%);
+  animation: ambientMove 14s ease-in-out infinite alternate;
+}
+
+@keyframes ambientMove {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(-2%, 2%, 0) scale(1.04);
+  }
+
+  100% {
+    transform: translate3d(2%, -2%, 0) scale(1.07);
+  }
+}
+
+/* Strong light mode */
+body.light-mode {
+  --bg: #f4f7fb;
+  --bg-2: #ffffff;
+  --card: rgba(255, 255, 255, 0.82);
+  --card-strong: #ffffff;
+  --text: #172033;
+  --muted: #5f6f87;
+  --line: rgba(30, 58, 138, 0.14);
+  --primary: #2563eb;
+  --primary-2: #7c3aed;
+  --orange: #ea580c;
+  --green: #0f766e;
+  --shadow: 0 24px 70px rgba(22, 32, 51, 0.12);
+
+  background:
+    radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.14), transparent 30%),
+    radial-gradient(circle at 85% 18%, rgba(14, 165, 233, 0.14), transparent 34%),
+    linear-gradient(135deg, #f4f7fb, #ffffff);
+}
+
+body.light-mode .navbar {
+  background: rgba(255, 255, 255, 0.82);
+}
+
+body.light-mode .btn,
+body.light-mode .tab-btn,
+body.light-mode .theme-btn,
+body.light-mode .menu-btn,
+body.light-mode .contact-card a {
+  background: rgba(255, 255, 255, 0.88);
+}
+
+body.light-mode .hero-title span {
+  color: #172033;
+  text-shadow:
+    0 0 18px rgba(37, 99, 235, 0.12),
+    0 0 45px rgba(37, 99, 235, 0.08);
+}
+
+body.light-mode .hero-role {
+  color: #2563eb;
+}
+
+body.light-mode .shape {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(203, 213, 225, 0.96)),
+    linear-gradient(45deg, rgba(37, 99, 235, 0.16), transparent);
+  box-shadow:
+    inset -25px -25px 55px rgba(30, 58, 138, 0.12),
+    inset 25px 25px 50px rgba(255, 255, 255, 0.45),
+    0 35px 80px rgba(30, 58, 138, 0.18);
+}
+
+body.light-mode .cursor-glow {
+  background: radial-gradient(
+    circle,
+    rgba(37, 99, 235, 0.16),
+    rgba(124, 58, 237, 0.08),
+    transparent 70%
+  );
+}
+
+/* Make hover less aggressive on smaller screens */
+@media (max-width: 760px) {
+  .cursor-glow {
+    opacity: 0.45;
+  }
+
+  body::before {
+    animation-duration: 18s;
+  }
+}
