@@ -3,464 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Osan Paudel | Software Support Analyst</title>
   <meta name="description" content="Portfolio of Osan Paudel, a Software Support Analyst, IT Support Technician, and Junior Developer based in Hamilton, Ontario." />
-  <style>
-    :root {
-      --bg: #08111f;
-      --card: #101b2e;
-      --card-light: #16243a;
-      --text: #eef4ff;
-      --muted: #aab8cf;
-      --line: rgba(255, 255, 255, 0.1);
-      --blue: #67b7ff;
-      --green: #68e2b4;
-      --purple: #b7a4ff;
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-    }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(103, 183, 255, 0.15), transparent 35%),
-        radial-gradient(circle at top right, rgba(104, 226, 180, 0.12), transparent 30%),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1120px, 92%);
-      margin: 0 auto;
-    }
-
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(8, 17, 31, 0.86);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav-content {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      letter-spacing: 0.3px;
-    }
-
-    .logo-mark {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--blue), var(--green));
-      color: #08111f;
-      font-weight: 900;
-      box-shadow: var(--shadow);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
-    .hero {
-      padding: 92px 0 70px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 42px;
-      align-items: center;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--green);
-      background: rgba(104, 226, 180, 0.08);
-      font-size: 0.92rem;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.4rem, 7vw, 5.4rem);
-      line-height: 0.95;
-      letter-spacing: -2px;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 span {
-      color: var(--blue);
-    }
-
-    .hero-subtitle {
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      color: var(--muted);
-      max-width: 700px;
-      margin-bottom: 28px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 32px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 13px 18px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      font-weight: 700;
-      transition: 0.2s ease;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--blue), var(--green));
-      color: #08111f;
-      border: none;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .quick-info {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .quick-info span {
-      padding: 9px 12px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.03);
-    }
-
-    .profile-card {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 28px;
-      box-shadow: var(--shadow);
-    }
-
-    .profile-top {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 22px;
-    }
-
-    .avatar {
-      width: 70px;
-      height: 70px;
-      display: grid;
-      place-items: center;
-      border-radius: 22px;
-      background: linear-gradient(135deg, var(--purple), var(--blue));
-      color: #08111f;
-      font-size: 1.4rem;
-      font-weight: 900;
-    }
-
-    .profile-card h2 {
-      font-size: 1.3rem;
-    }
-
-    .profile-card p {
-      color: var(--muted);
-    }
-
-    .status-list {
-      display: grid;
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .status-item {
-      padding: 14px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--line);
-    }
-
-    .status-item strong {
-      display: block;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-
-    section {
-      padding: 72px 0;
-    }
-
-    .section-title {
-      max-width: 760px;
-      margin-bottom: 34px;
-    }
-
-    .section-title p {
-      color: var(--muted);
-      margin-top: 10px;
-    }
-
-    .section-title h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      letter-spacing: -1px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      background: rgba(16, 27, 46, 0.85);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      font-size: 1.2rem;
-    }
-
-    .card p,
-    .card li {
-      color: var(--muted);
-    }
-
-    .skill-card {
-      min-height: 170px;
-    }
-
-    .skill-icon {
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
-      background: rgba(103, 183, 255, 0.1);
-      color: var(--blue);
-      margin-bottom: 14px;
-      font-weight: 900;
-    }
-
-    .project-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 22px;
-    }
-
-    .tab-btn {
-      cursor: pointer;
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    .tab-btn.active {
-      background: rgba(103, 183, 255, 0.14);
-      color: var(--text);
-      border-color: rgba(103, 183, 255, 0.35);
-    }
-
-    .project-card {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .project-card .project-type {
-      width: fit-content;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(104, 226, 180, 0.1);
-      color: var(--green);
-      font-size: 0.82rem;
-      font-weight: 800;
-    }
-
-    .tech-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: auto;
-    }
-
-    .tech-list span {
-      padding: 6px 9px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: 0.82rem;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 18px;
-    }
-
-    .timeline-card {
-      position: relative;
-      padding-left: 26px;
-    }
-
-    .timeline-card::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 30px;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--blue);
-    }
-
-    .timeline-card ul {
-      margin-left: 18px;
-      margin-top: 12px;
-    }
-
-    .date {
-      color: var(--green);
-      font-weight: 800;
-      font-size: 0.9rem;
-      margin-bottom: 4px;
-    }
-
-    .contact-box {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    .contact-links {
-      display: grid;
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .contact-links a {
-      padding: 14px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--line);
-      color: var(--muted);
-    }
-
-    .contact-links a:hover {
-      color: var(--text);
-      border-color: rgba(103, 183, 255, 0.4);
-    }
-
-    footer {
-      padding: 28px 0;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      text-align: center;
-    }
-
-    @media (max-width: 900px) {
-      .hero-grid,
-      .grid-2,
-      .contact-box {
-        grid-template-columns: 1fr;
-      }
-
-      .grid-3 {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 650px) {
-      .nav-content {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 16px 0;
-      }
-
-      .nav-links {
-        width: 100%;
-        overflow-x: auto;
-        padding-bottom: 4px;
-      }
-
-      .hero {
-        padding-top: 62px;
-      }
-
-      .grid-3 {
-        grid-template-columns: 1fr;
-      }
-
-      .profile-card,
-      .card {
-        border-radius: 20px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="navbar">
@@ -470,11 +17,16 @@
         <span>Osan Paudel</span>
       </a>
 
-      <nav class="nav-links" aria-label="Main navigation">
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
+        <a href="#certifications">Certifications</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -483,16 +35,22 @@
   <main id="home">
     <section class="hero">
       <div class="container hero-grid">
-        <div>
-          <div class="tag">Available for IT Support, Software Support, and Junior Developer roles</div>
-          <h1>Software Support Analyst, <span>IT Support Technician</span> & Junior Developer.</h1>
+        <div class="hero-text">
+          <p class="eyebrow">Open to IT Support, Software Support, and Junior Developer roles</p>
+
+          <h1>
+            Software Support Analyst,
+            <span>IT Support Technician</span>
+            & Junior Developer.
+          </h1>
+
           <p class="hero-subtitle">
             I combine troubleshooting, user support, programming, and cloud fundamentals to solve technical problems and build practical digital projects.
           </p>
 
           <div class="hero-buttons">
             <a class="btn btn-primary" href="#projects">View Projects</a>
-            <a class="btn" href="assets/Osan-Paudel-Resume.pdf" download>Download Resume</a>
+            <a class="btn" href="Osan-Paudel-Resume.pdf" download>Download Resume</a>
             <a class="btn" href="#contact">Contact Me</a>
           </div>
 
@@ -503,51 +61,40 @@
           </div>
         </div>
 
-        <aside class="profile-card" aria-label="Profile summary">
-          <div class="profile-top">
-            <div class="avatar">OP</div>
-            <div>
-              <h2>Osan Paudel</h2>
-              <p>Software Support Graduate</p>
-            </div>
+        <aside class="profile-card">
+          <div class="profile-image-wrap">
+            <img src="images/P4.jpeg" alt="Osan Paudel" class="profile-image" />
           </div>
 
-          <p>
+          <h2>Osan Paudel</h2>
+          <p class="profile-role">Software Support Graduate</p>
+
+          <p class="profile-summary">
             Computer Systems Technician – Software Support graduate with experience in Windows troubleshooting, user support, Active Directory labs, web development, JavaScript projects, C# games, and Azure fundamentals.
           </p>
 
-          <div class="status-list">
-            <div class="status-item">
-              <strong>Support Focus</strong>
-              <p>Windows, user accounts, troubleshooting, networking basics</p>
-            </div>
-            <div class="status-item">
-              <strong>Development Focus</strong>
-              <p>Websites, JavaScript games, C#, Python, Java, MySQL</p>
-            </div>
-            <div class="status-item">
-              <strong>Lab Focus</strong>
-              <p>VirtualBox, Windows Server, Active Directory, Azure basics</p>
-            </div>
+          <div class="profile-tags">
+            <span>IT Support</span>
+            <span>Web Development</span>
+            <span>Cloud Basics</span>
+            <span>VirtualBox Labs</span>
           </div>
         </aside>
       </div>
     </section>
 
-    <section id="about">
-      <div class="container grid-2">
-        <div class="section-title">
-          <h2>About Me</h2>
-          <p>
-            I am building my career around software support, IT support, and practical development projects.
-          </p>
+    <section id="about" class="section">
+      <div class="container about-grid">
+        <div>
+          <p class="section-label">About Me</p>
+          <h2>Building a career between support, systems, and software.</h2>
         </div>
 
-        <div class="card">
+        <div class="card about-card">
           <p>
             I’m Osan Paudel, a Software Support and IT Support professional based in Hamilton, Ontario. I completed a two-year Computer Systems Technician – Software Support diploma at Mohawk College, where I gained experience in software support, web development, programming, databases, systems analysis, testing, and technical communication.
           </p>
-          <br />
+
           <p>
             My background combines IT support and development skills. I have worked with Windows troubleshooting, Active Directory labs, VirtualBox, Azure Fundamentals, JavaScript projects, C# games, Python, Java, HTML, CSS, PHP, and MySQL.
           </p>
@@ -555,161 +102,204 @@
       </div>
     </section>
 
-    <section id="skills">
+    <section id="skills" class="section">
       <div class="container">
-        <div class="section-title">
+        <div class="section-heading">
+          <p class="section-label">Skills</p>
           <h2>Technical Skills</h2>
-          <p>Grouped by the type of problems I can help solve.</p>
+          <p>Grouped by the type of technical problems I can help solve.</p>
         </div>
 
-        <div class="grid-3">
-          <div class="card skill-card">
+        <div class="skills-grid">
+          <article class="card skill-card">
             <div class="skill-icon">IT</div>
             <h3>IT Support</h3>
-            <p>Windows 10/11, troubleshooting, software installation, system diagnostics, user support, account recovery.</p>
-          </div>
+            <p>Windows 10/11, troubleshooting, software installation, system diagnostics, user support, and account recovery.</p>
+          </article>
 
-          <div class="card skill-card">
+          <article class="card skill-card">
             <div class="skill-icon">AD</div>
             <h3>Systems & Networking</h3>
-            <p>Active Directory, user accounts, password resets, DNS, DHCP, TCP/IP, Wi-Fi troubleshooting.</p>
-          </div>
+            <p>Active Directory, user accounts, password resets, DNS, DHCP, TCP/IP, and Wi-Fi troubleshooting.</p>
+          </article>
 
-          <div class="card skill-card">
+          <article class="card skill-card">
             <div class="skill-icon">AZ</div>
             <h3>Cloud</h3>
             <p>Microsoft Azure Fundamentals, AZ-900, cloud concepts, Azure services, identity, pricing, and security basics.</p>
-          </div>
+          </article>
 
-          <div class="card skill-card">
+          <article class="card skill-card">
             <div class="skill-icon">JS</div>
             <h3>Web Development</h3>
             <p>HTML, CSS, JavaScript, PHP, Ajax, JSON, responsive design, and interactive web features.</p>
-          </div>
+          </article>
 
-          <div class="card skill-card">
-            <div class="skill-icon">{ }</div>
+          <article class="card skill-card">
+            <div class="skill-icon">C#</div>
             <h3>Programming</h3>
             <p>JavaScript, Python, Java, C#, C, PHP, debugging, problem-solving, and assignment-based projects.</p>
-          </div>
+          </article>
 
-          <div class="card skill-card">
+          <article class="card skill-card">
             <div class="skill-icon">DB</div>
             <h3>Tools & Databases</h3>
-            <p>MySQL, SQL basics, GitHub, VS Code, Visual Studio, IntelliJ, VirtualBox, Microsoft Office.</p>
-          </div>
+            <p>MySQL, SQL basics, GitHub, VS Code, Visual Studio, IntelliJ, VirtualBox, and Microsoft Office.</p>
+          </article>
+        </div>
+
+        <div class="logo-strip" aria-label="Technology logos">
+          <img src="images/html.webp" alt="HTML logo" />
+          <img src="images/css.png" alt="CSS logo" />
+          <img src="images/js.webp" alt="JavaScript logo" />
+          <img src="images/python.webp" alt="Python logo" />
+          <img src="images/java.webp" alt="Java logo" />
+          <img src="images/c.png" alt="C logo" />
+          <img src="images/cc.png" alt="C sharp logo" />
+          <img src="images/mysql.jpg" alt="MySQL logo" />
+          <img src="images/office.png" alt="Microsoft Office logo" />
+          <img src="images/github.svg" alt="GitHub logo" />
         </div>
       </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="section">
       <div class="container">
-        <div class="section-title">
+        <div class="section-heading">
+          <p class="section-label">Projects</p>
           <h2>Projects & Labs</h2>
           <p>A mix of IT support labs, web projects, academic assignments, and game development practice.</p>
         </div>
 
-        <div class="project-tabs" aria-label="Project filters">
+        <div class="project-tabs">
           <button class="tab-btn active" data-filter="all">All</button>
           <button class="tab-btn" data-filter="support">IT Labs</button>
           <button class="tab-btn" data-filter="web">Web</button>
           <button class="tab-btn" data-filter="game">Games</button>
         </div>
 
-        <div class="grid-3" id="projectGrid">
+        <div class="projects-grid" id="projectGrid">
           <article class="card project-card" data-type="support">
+            <img src="images/project.png" alt="Project icon" class="project-img" />
             <span class="project-type">IT Lab</span>
             <h3>Active Directory Home Lab</h3>
             <p>Built a self-directed Windows Server lab using VirtualBox. Installed and configured Active Directory Domain Services, created users and groups, practiced password resets, and performed basic account management tasks.</p>
             <div class="tech-list">
-              <span>VirtualBox</span><span>Windows Server</span><span>Active Directory</span>
+              <span>VirtualBox</span>
+              <span>Windows Server</span>
+              <span>Active Directory</span>
             </div>
           </article>
 
           <article class="card project-card" data-type="web">
+            <img src="images/home.gif" alt="Portfolio preview animation" class="project-img" />
             <span class="project-type">Web Project</span>
             <h3>Personal Portfolio Website</h3>
-            <p>Designed and developed a responsive personal portfolio website to showcase my technical skills, academic projects, certifications, experience, and resume.</p>
+            <p>Designed and developed a responsive portfolio website to showcase technical skills, academic projects, certifications, experience, and resume.</p>
             <div class="tech-list">
-              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
             </div>
           </article>
 
           <article class="card project-card" data-type="game">
+            <img src="images/project1.png" alt="Game project icon" class="project-img" />
             <span class="project-type">Game Project</span>
             <h3>Space Warship Game</h3>
             <p>Built a browser-based game where the player controls a warship, attacks enemy ships, avoids obstacles, and uses movement and scoring logic.</p>
             <div class="tech-list">
-              <span>JavaScript</span><span>Game Logic</span><span>Collision Detection</span>
+              <span>JavaScript</span>
+              <span>Game Logic</span>
+              <span>Collision Detection</span>
             </div>
           </article>
 
           <article class="card project-card" data-type="game">
+            <img src="images/piratewheel.png" alt="Game icon" class="project-img" />
             <span class="project-type">Game Project</span>
             <h3>Obstacle Jumping Game</h3>
             <p>Created a jumping obstacle game with timed movement, basic animation, scoring, and collision detection.</p>
             <div class="tech-list">
-              <span>JavaScript</span><span>DOM</span><span>Animation</span>
+              <span>JavaScript</span>
+              <span>DOM</span>
+              <span>Animation</span>
             </div>
           </article>
 
           <article class="card project-card" data-type="game">
+            <img src="images/coming soon.jpg" alt="Puzzle game placeholder" class="project-img" />
             <span class="project-type">Game Project</span>
             <h3>JavaScript Puzzle Game</h3>
             <p>Developed an interactive puzzle game using JavaScript with user input, logic handling, and problem-solving mechanics.</p>
             <div class="tech-list">
-              <span>JavaScript</span><span>Events</span><span>Problem Solving</span>
+              <span>JavaScript</span>
+              <span>Events</span>
+              <span>Problem Solving</span>
             </div>
           </article>
 
           <article class="card project-card" data-type="game">
+            <img src="images/project.png" alt="C sharp game project" class="project-img" />
             <span class="project-type">C# Project</span>
             <h3>C# Game Project</h3>
             <p>Created a C# game project to practice object-oriented programming, game logic, user interaction, and debugging.</p>
             <div class="tech-list">
-              <span>C#</span><span>OOP</span><span>Debugging</span>
+              <span>C#</span>
+              <span>OOP</span>
+              <span>Debugging</span>
             </div>
           </article>
 
           <article class="card project-card" data-type="web">
+            <img src="images/project1.png" alt="Academic project icon" class="project-img" />
             <span class="project-type">Academic Project</span>
             <h3>JavaScript Assignments</h3>
             <p>Completed multiple JavaScript-based academic assignments involving functions, arrays, DOM manipulation, events, forms, validation, and interactive web features.</p>
             <div class="tech-list">
-              <span>JavaScript</span><span>HTML</span><span>CSS</span>
+              <span>JavaScript</span>
+              <span>HTML</span>
+              <span>CSS</span>
             </div>
           </article>
 
           <article class="card project-card" data-type="support">
+            <img src="images/workexperience.png" alt="Work experience icon" class="project-img" />
             <span class="project-type">Support Practice</span>
             <h3>Windows Troubleshooting Practice</h3>
-            <p>Practiced common support tasks including checking IP configuration, troubleshooting connectivity, installing software, and documenting basic fixes.</p>
+            <p>Practiced support tasks including checking IP configuration, troubleshooting connectivity, installing software, and documenting basic fixes.</p>
             <div class="tech-list">
-              <span>Windows</span><span>Networking</span><span>Documentation</span>
+              <span>Windows</span>
+              <span>Networking</span>
+              <span>Documentation</span>
             </div>
           </article>
 
           <article class="card project-card" data-type="support">
+            <img src="images/certificate.png" alt="Certificate icon" class="project-img" />
             <span class="project-type">Cloud Learning</span>
             <h3>Azure Fundamentals</h3>
             <p>Completed Microsoft Azure Fundamentals AZ-900 and learned core cloud concepts, Azure services, pricing, identity, and security basics.</p>
             <div class="tech-list">
-              <span>Azure</span><span>AZ-900</span><span>Cloud Basics</span>
+              <span>Azure</span>
+              <span>AZ-900</span>
+              <span>Cloud Basics</span>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="experience">
+    <section id="experience" class="section">
       <div class="container">
-        <div class="section-title">
+        <div class="section-heading">
+          <p class="section-label">Experience</p>
           <h2>Experience & Education</h2>
           <p>Support experience, technical education, and hands-on learning.</p>
         </div>
 
         <div class="timeline">
-          <div class="card timeline-card">
+          <article class="card timeline-card">
             <p class="date">June 2024 – April 2026</p>
             <h3>Operations Support Associate — Amazon Fulfillment Center</h3>
             <ul>
@@ -717,9 +307,9 @@
               <li>Investigated and resolved recurring data-related issues using structured troubleshooting methods.</li>
               <li>Collaborated with cross-functional teams to maintain workflow efficiency.</li>
             </ul>
-          </div>
+          </article>
 
-          <div class="card timeline-card">
+          <article class="card timeline-card">
             <p class="date">December 2022 – July 2023</p>
             <h3>IT Support Assistant — Hetauda School of Management</h3>
             <ul>
@@ -727,58 +317,62 @@
               <li>Installed and configured systems, operating systems, and software applications.</li>
               <li>Troubleshot connectivity issues and supported user account management.</li>
             </ul>
-          </div>
+          </article>
 
-          <div class="card timeline-card">
+          <article class="card timeline-card">
             <p class="date">Mohawk College</p>
             <h3>Computer Systems Technician – Software Support</h3>
             <ul>
               <li>Studied software support, web development, programming, databases, systems analysis, testing, and technical communication.</li>
               <li>Completed academic projects using JavaScript, Python, Java, C#, PHP, MySQL, HTML, and CSS.</li>
             </ul>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="certifications">
+    <section id="certifications" class="section">
       <div class="container">
-        <div class="section-title">
+        <div class="section-heading">
+          <p class="section-label">Certifications</p>
           <h2>Certifications</h2>
           <p>Certifications and learning milestones that support my technical foundation.</p>
         </div>
 
-        <div class="grid-2">
-          <div class="card">
-            <h3>Microsoft Azure Fundamentals AZ-900</h3>
-            <p>Cloud concepts, Azure services, pricing, identity, security, and compliance fundamentals.</p>
-          </div>
+        <div class="cert-grid">
+          <article class="card cert-card">
+            <img src="images/certificate.png" alt="Certificate icon" />
+            <div>
+              <h3>Microsoft Azure Fundamentals AZ-900</h3>
+              <p>Cloud concepts, Azure services, pricing, identity, security, and compliance fundamentals.</p>
+            </div>
+          </article>
 
-          <div class="card">
-            <h3>Google IT Support Certificate</h3>
-            <p>Technical support fundamentals, networking basics, operating systems, troubleshooting, and customer support concepts.</p>
-          </div>
+          <article class="card cert-card">
+            <img src="images/certificate.png" alt="Certificate icon" />
+            <div>
+              <h3>Google IT Support Certificate</h3>
+              <p>Technical support fundamentals, networking basics, operating systems, troubleshooting, and customer support concepts.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="contact">
-      <div class="container contact-box">
-        <div class="section-title">
-          <h2>Get in Touch</h2>
-          <p>
+    <section id="contact" class="section">
+      <div class="container contact-grid">
+        <div>
+          <p class="section-label">Contact</p>
+          <h2>Let’s connect.</h2>
+          <p class="contact-text">
             I am open to entry-level IT Support, Software Support, Help Desk, Application Support, Technical Support, and Junior Developer opportunities.
           </p>
         </div>
 
-        <div class="card">
-          <h3>Contact</h3>
-          <p>Feel free to reach out by email or connect with me online.</p>
-          <div class="contact-links">
-            <a href="mailto:osan.paudel2005@gmail.com">osan.paudel2005@gmail.com</a>
-            <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="https://github.com/PaudelOsan" target="_blank" rel="noreferrer">GitHub</a>
-          </div>
+        <div class="card contact-card">
+          <a href="mailto:osan.paudel2005@gmail.com">osan.paudel2005@gmail.com</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/PaudelOsan" target="_blank" rel="noreferrer">GitHub</a>
         </div>
       </div>
     </section>
@@ -790,23 +384,6 @@
     </div>
   </footer>
 
-  <script>
-    const tabButtons = document.querySelectorAll(".tab-btn");
-    const projectCards = document.querySelectorAll(".project-card");
-
-    tabButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const filter = button.dataset.filter;
-
-        tabButtons.forEach((btn) => btn.classList.remove("active"));
-        button.classList.add("active");
-
-        projectCards.forEach((card) => {
-          const isVisible = filter === "all" || card.dataset.type === filter;
-          card.style.display = isVisible ? "flex" : "none";
-        });
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
