@@ -18,7 +18,13 @@
         <span>Osan Paudel</span>
       </a>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="nav-actions">
+        <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">
+          <span id="themeIcon">🌙</span>
+        </button>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      </div>
 
       <nav class="nav-links" id="navLinks">
         <a href="#about">About</a>
@@ -33,6 +39,8 @@
 
   <main id="home">
     <section class="hero">
+      <div class="hero-glow" id="heroGlow"></div>
+
       <div class="container hero-grid">
         <div class="hero-text">
           <p class="eyebrow">Open to IT Support, Software Support, and Junior Developer roles</p>
