@@ -1286,12 +1286,8 @@ body.light-mode .hero-title span {
   -webkit-text-stroke: 1px rgba(16, 24, 39, 0.08);
 }
 
-/* Make the name feel more blocky and premium */
-.hero-title {
-  font-family: Impact, Haettenschweiler, "Arial Black", Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: -6px;
-}/* =========================
+
+/* =========================
    LIGHT MODE CURSOR GLOW FIX
    ========================= */
 
@@ -1325,7 +1321,7 @@ body.light-mode .cursor-glow {
     circle,
     rgba(37, 99, 235, 0.20),
     rgba(124, 58, 237, 0.10),
-    transparent 68%
+    transparent 78%
   );
   filter: blur(20px);
   mix-blend-mode: multiply;
