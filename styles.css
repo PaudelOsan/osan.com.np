@@ -1265,13 +1265,7 @@ body.light-mode .cursor-glow {
    SHARP HERO NAME STYLE
    ========================= */
 
-.hero-title span {
-  text-shadow: none !important;
-  color: var(--text);
-  letter-spacing: -7px;
-  font-weight: 900;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.08);
-}
+
 
 /* Subtle sharp edge in dark mode */
 body:not(.light-mode) .hero-title span {
