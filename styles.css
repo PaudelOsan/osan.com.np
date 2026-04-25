@@ -1297,6 +1297,7 @@ body.light-mode .hero-title span {
 
 .cursor-glow {
   position: fixed !important;
+  color:black;
   width: 420px !important;
   height: 420px !important;
   pointer-events: none !important;
