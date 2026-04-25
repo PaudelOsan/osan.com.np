@@ -20,8 +20,8 @@ if (menuBtn && navLinks) {
 }
 
 /* Dark / light mode */
-function setTheme(mode) {
-  if (mode === "dark") {
+function applyTheme(theme) {
+  if (theme === "dark") {
     document.body.classList.add("dark-mode");
 
     if (themeIcon) {
@@ -40,18 +40,17 @@ function setTheme(mode) {
   }
 }
 
-const savedTheme = localStorage.getItem("theme");
-
-if (savedTheme === "dark") {
-  setTheme("dark");
-} else {
-  setTheme("light");
-}
+const savedTheme = localStorage.getItem("theme") || "light";
+applyTheme(savedTheme);
 
 if (themeBtn) {
   themeBtn.addEventListener("click", () => {
-    const isDark = document.body.classList.contains("dark-mode");
-    setTheme(isDark ? "light" : "dark");
+    const currentTheme = document.body.classList.contains("dark-mode")
+      ? "dark"
+      : "light";
+
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    applyTheme(newTheme);
   });
 }
 
