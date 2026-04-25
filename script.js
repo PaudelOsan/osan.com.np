@@ -20,23 +20,38 @@ if (menuBtn && navLinks) {
 }
 
 /* Dark / light mode */
+function setTheme(mode) {
+  if (mode === "dark") {
+    document.body.classList.add("dark-mode");
+
+    if (themeIcon) {
+      themeIcon.textContent = "☀️";
+    }
+
+    localStorage.setItem("theme", "dark");
+  } else {
+    document.body.classList.remove("dark-mode");
+
+    if (themeIcon) {
+      themeIcon.textContent = "🌙";
+    }
+
+    localStorage.setItem("theme", "light");
+  }
+}
+
 const savedTheme = localStorage.getItem("theme");
 
 if (savedTheme === "dark") {
-  document.body.classList.add("dark-mode");
-  themeIcon.textContent = "☀️";
+  setTheme("dark");
 } else {
-  themeIcon.textContent = "🌙";
+  setTheme("light");
 }
 
 if (themeBtn) {
   themeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-
     const isDark = document.body.classList.contains("dark-mode");
-
-    themeIcon.textContent = isDark ? "☀️" : "🌙";
-    localStorage.setItem("theme", isDark ? "dark" : "light");
+    setTheme(isDark ? "light" : "dark");
   });
 }
 
@@ -72,6 +87,8 @@ tabButtons.forEach((button) => {
 
 /* Navbar shadow on scroll */
 window.addEventListener("scroll", () => {
+  if (!navbar) return;
+
   if (window.scrollY > 20) {
     navbar.classList.add("scrolled");
   } else {
